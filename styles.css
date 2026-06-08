@@ -42,6 +42,34 @@ body{
 
 .hero-image{display:none}
 
+/* decorative animated blobs in hero */
+.hero{position:relative;overflow:visible}
+.hero-decor{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-decor::before, .hero-decor::after{content:'';position:absolute;border-radius:50%;filter:blur(48px);opacity:.7;transform-origin:center;mix-blend-mode:screen}
+.hero-decor::before{width:360px;height:360px;left:-6%;top:-40%;background:radial-gradient(circle at 30% 30%, rgba(124,58,237,0.75), rgba(124,58,237,0.35) 40%, transparent 60%);animation:blob1 9s ease-in-out infinite}
+.hero-decor::after{width:420px;height:420px;right:-8%;bottom:-32%;background:radial-gradient(circle at 70% 70%, rgba(6,182,212,0.68), rgba(6,182,212,0.34) 40%, transparent 60%);animation:blob2 11s ease-in-out infinite}
+
+@keyframes blob1{
+  0%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(18px) scale(1.06)}
+  100%{transform:translateY(0) scale(1)}
+}
+@keyframes blob2{
+  0%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-18px) scale(0.98)}
+  100%{transform:translateY(0) scale(1)}
+}
+
+/* headings: stylish underline */
+.about h3, .projects h3, .skills h3, .contact h3{position:relative;padding-bottom:10px}
+.about h3::after, .projects h3::after, .skills h3::after, .contact h3::after{content:'';position:absolute;left:0;bottom:0;height:4px;width:48px;border-radius:6px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1))}
+
+/* ensure hero content is above the blobs */
+.hero .hero-content{position:relative;z-index:2}
+
+/* smooth scrolling */
+html{scroll-behavior:smooth}
+
 .about h3, .projects h3, .skills h3, .contact h3{margin-top:0;color:var(--text)}
 .about{margin-top:8px}
 
