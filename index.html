@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maheendra Menon — Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-left">
+          <div class="avatar-small">MM</div>
+          <div class="brand-text">
+            <h1 class="name">Maheendra Menon</h1>
+            <p class="role">Designer</p>
+          </div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-actions">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </p>
+        </div>
+        <!-- hero image removed to keep hero minimal -->
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h3>About</h3>
+      <p>Hi — I'm Maheendra. I design and build simple, usable websites. This site is a starter template; I'll fill in your projects and details once you provide them.</p>
+    </section>
+
+    <section id="projects" class="projects container">
+      <h3>Projects</h3>
+      <div class="project-grid">
+        <article class="project">
+          <h4>Project One</h4>
+          <p>Short description of the project. Replace this with your project details.</p>
+          <p class="project-links"><a href="#">Live</a> · <a href="#">Repo</a></p>
+        </article>
+
+        <article class="project">
+          <h4>Project Two</h4>
+          <p>Short description of the project. Replace this with your project details.</p>
+          <p class="project-links"><a href="#">Live</a> · <a href="#">Repo</a></p>
+        </article>
+
+        <article class="project">
+          <h4>Project Three</h4>
+          <p>Short description of the project. Replace this with your project details.</p>
+          <p class="project-links"><a href="#">Live</a> · <a href="#">Repo</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills container">
+      <h3>Skills</h3>
+      <ul class="skill-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Design</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h3>Contact</h3>
+      <p>If you'd like to get in touch, email me at <a href="mailto:your-email@example.com">your-email@example.com</a> (replace with your real email).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Maheendra Menon — Built with a starter template.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

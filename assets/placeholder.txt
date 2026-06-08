@@ -1,0 +1,1 @@
+Add your images (e.g. profile.jpg) here — this directory holds site assets.
