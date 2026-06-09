@@ -4,146 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maheendra Menon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand" id="brandReset" style="cursor: pointer;">
-        <div class="brand-left">
-          <div class="avatar-small">MM</div>
-          <div class="brand-text">
-            <h1 class="name">Maheendra Menon</h1>
-            <p class="role">Designer • Developer</p>
+  <section id="hero" class="hero">
+    <div class="container hero-panel">
+      <div class="hero-content-wrapper">
+        <div class="hero-card">
+          <p class="eyebrow">WEB DESIGNER • WEB DEVELOPER</p>
+          <h1 class="hero-name" id="heroName">Maheendra Menon.</h1>
+          <p class="hero-subtitle">I build websites that prioritize speed, clean architecture, and fluid user experiences. I don't believe in over-complicating things—I just believe in doing them right.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#" id="revealBtn">Let's talk shop.</a>
+            <a class="btn ghost" href="#contact">Get in touch.</a>
+          </div>
+          <div class="hero-hint">Click above to explore.</div>
+        </div>
+        <div class="hero-image-box">
+          <div class="hero-image-frame">
+            <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar">
           </div>
         </div>
       </div>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="container hero-panel">
-        <div class="hero-content-wrapper">
-          
-          <div class="hero-card">
-            <p class="eyebrow">Web Designer • Web Developer</p>
-            <h1 class="hero-name" id="heroName">Maheendra Menon.</h1>
-            <p class="hero-subtitle">I build websites that prioritize speed, clean architecture, and fluid user experiences. I don't believe in over-complicating things—I just believe in doing them right.</p>
-            <div class="hero-actions">
-              <a class="btn reveal-link" href="#about" id="revealBtn">Let's talk shop.</a>
-              <a class="btn ghost reveal-link" href="#contact">Get in touch.</a>
-            </div>
-            <div class="hero-hint">Click above to explore.</div>
-          </div>
-
-          <div class="hero-image-box">
-            <div class="hero-image-frame">
-              <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active');">
-              <div class="avatar-fallback-glow"></div>
-            </div>
-          </div>
-
-        </div>
-        <div class="hero-decor" aria-hidden="true"></div>
+  <main class="main-content" id="mainContent">
+    <div class="profile-main-header container">
+      <div class="profile-main-avatar-frame">
+        <img src="me.jpeg" alt="Maheendra Menon" class="profile-main-avatar">
       </div>
+    </div>
+
+    <section id="about" class="container">
+      <h3>Building for the future.</h3>
+      <p>I’m a developer based in Ernakulam, currently studying at TocH Institute of Science and Technology. I’ve always been drawn to the intersection of clean design and efficient code. I don't just build pages; I focus on creating digital experiences that feel fast, responsive, and intuitive.</p>
     </section>
 
-    <div class="main-content" id="mainContent">
-      <div class="profile-main-header container">
-        <div class="profile-main-avatar-frame">
-          <img src="me.jpeg" alt="Maheendra Menon" class="profile-main-avatar">
-        </div>
-      </div>
-
-      <section id="about" class="about container">
-        <h3>Building for the future.</h3>
-        <p>I’m a developer based in Ernakulam, currently studying at TocH Institute of Science and Technology. I’ve always been drawn to the intersection of clean design and efficient code. I don't just build pages; I focus on creating digital experiences that feel fast, responsive, and intuitive.</p>
-      </section>
-
-      <section id="projects" class="projects container">
-        <h3>Projects</h3>
-        <div class="project-grid">
-          <article class="project">
-            <h4>Car Showcase (Personal Project)</h4>
-            <p>This was a passion project—a deep dive into performance optimization and high-fidelity UI design. It taught me how to balance complex animation states with lightning-fast load times.</p>
-            <p class="project-links"><a href="#">Live demo</a> · <a href="#">Source</a></p>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" class="experience container">
-        <h3>Experience</h3>
-        <div class="experience-grid">
-          <article class="experience-card">
-            <h4>Student Web Developer</h4>
-            <p>Currently pursuing a B.Tech degree at TocH Institute of Science and Technology, focusing on building high-performance web interfaces.</p>
-          </article>
-          <article class="experience-card">
-            <h4>Education</h4>
-            <p>B.Tech in Computer Science, TocH Institute of Science and Technology. Expected graduation: 2029.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" class="skills container">
-        <h3>My Toolkit</h3>
-        <p>I prefer a focused, high-performance tech stack:</p>
-        <ul class="skill-list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript (ES6+)</li>
-          <li>UI/UX Principles</li>
-          <li>Responsive Design</li>
-          <li>Performance Optimization</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="contact container">
-        <h3>Contact</h3>
-        <p>If you'd like to get in touch, email me at <a href="mailto:maheendramenon@gmail.com">maheendramenon@gmail.com</a>.</p>
-      </section>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Maheendra Menon.</p>
-    </div>
-  </footer>
+    </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const showPortfolio = () => document.body.classList.add('show-content');
-    const hidePortfolio = () => { document.body.classList.remove('show-content'); window.scrollTo({ top: 0, behavior: 'smooth' }); };
-    const scrollToSection = (targetId) => {
-      const target = document.querySelector(targetId);
-      if (!target) return;
-      const offsetTop = targetId === '#about' ? document.getElementById('mainContent').offsetTop - 90 : target.getBoundingClientRect().top + window.pageYOffset - 110;
-      window.scrollTo({ top: Math.max(offsetTop, 0), behavior: 'smooth' });
-    };
-
-    document.getElementById('revealBtn')?.addEventListener('click', (e) => { e.preventDefault(); showPortfolio(); setTimeout(() => scrollToSection('#about'), 350); });
-    document.querySelectorAll('.nav a, .hero-actions a.ghost').forEach(link => {
-      link.addEventListener('click', event => {
-        const href = link.getAttribute('href');
-        if (!href || href === '#' || href === '#hero') return;
-        event.preventDefault(); showPortfolio(); setTimeout(() => scrollToSection(href), 350);
-      });
+    const revealBtn = document.getElementById('revealBtn');
+    revealBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.body.classList.add('show-content');
     });
-    document.getElementById('heroName')?.addEventListener('click', () => { showPortfolio(); setTimeout(() => scrollToSection('#about'), 350); });
-    document.getElementById('brandReset')?.addEventListener('click', hidePortfolio);
   </script>
 </body>
 </html>

@@ -1,78 +1,32 @@
-﻿:root {
-  --bg-1: #0f1724; --bg-2: #071029; --text: #e6eef8; --muted: #9aa7bd;
-  --accent-1: #7c3aed; --accent-2: #06b6d4;
-}
-
+﻿/* Reset and Basics */
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body { font-family: Inter, system-ui, sans-serif; background: linear-gradient(180deg, var(--bg-1), var(--bg-2)); color: var(--text); overflow-y: hidden; }
+body { margin: 0; background: #071029; color: #e6eef8; font-family: sans-serif; overflow: hidden; }
 body.show-content { overflow-y: auto; }
 
-/* Transitions & Animation Drift */
-.hero, .main-content {
-  transition: transform 1.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 1.6s cubic-bezier(0.19, 1, 0.22, 1);
+/* The Curtain (Hero) */
+.hero {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+  z-index: 1000;
+  background: #0f1724;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.hero-card, .hero-image-box { animation: subtleDrift 8s infinite ease-in-out; }
-@keyframes subtleDrift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+body.show-content .hero { transform: translateY(-100%); }
 
-/* Hero Section */
-.hero { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1000; }
-.hero-panel { max-width: 1100px; padding: 64px 48px; background: rgba(255,255,255,0.03); border-radius: 32px; border: 1px solid rgba(255,255,255,0.05); }
-.hero-content-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
-body.show-content .hero { transform: translateY(-100vh) scale(0.95); opacity: 0; pointer-events: none; }
-
-/* ADD THIS to hide the main content initially */
-#mainContent {
+/* The Hidden Content */
+.main-content {
   opacity: 0;
   transition: opacity 0.8s ease;
   pointer-events: none;
 }
-
-/* This triggers the reveal */
-body.show-content #mainContent {
+body.show-content .main-content {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 }
 
-/* Ensure the hero section covers everything until the reveal */
-.hero {
-  z-index: 1000; /* High z-index keeps it on top */
-}
+/* Image Handling */
+.profile-main-header { display: none; }
+body.show-content .profile-main-header { display: block; margin-top: 20px; }
 
-/* Image Styles */
-.hero-image-box { width: 290px; height: 290px; }
-.hero-image-frame { width: 100%; height: 100%; border-radius: 28px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); }
-.hero-avatar { width: 100%; height: 100%; object-fit: cover; }
-.profile-main-avatar-frame { width: 160px; height: 160px; border-radius: 24px; overflow: hidden; }
-.profile-main-avatar { width: 100%; height: 100%; object-fit: cover; }
-
-/* Update this block in your styles.css */
-.profile-main-header {
-  padding-bottom: 0;
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-start;
-  visibility: hidden; /* Hide it completely */
-}
-
-/* SHOW IT ONLY WHEN THE CURTAIN OPENS */
-body.show-content .profile-main-header {
-  visibility: visible; /* Show only after curtain slides */
-}
-
-/* Typography */
-h1, h3 { letter-spacing: -0.02em; color: #fff; }
-.hero-name { font-size: clamp(2.5rem, 5vw, 4rem); cursor: pointer; }
-.hero-subtitle { font-size: 1.1rem; color: var(--muted); max-width: 45ch; }
-.eyebrow { color: var(--accent-2); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-
-/* Buttons & Components */
-.btn { padding: 14px 24px; border-radius: 14px; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color: #fff; text-decoration: none; font-weight: 600; display: inline-block; }
-.btn.ghost { background: rgba(255,255,255,0.05); color: var(--accent-2); }
-.project, .experience-card { padding: 24px; border-radius: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04); }
-
-/* Responsive */
-@media (max-width: 900px) {
-  .hero-content-wrapper { flex-direction: column-reverse; text-align: center; }
-  .profile-main-header { display: flex; justify-content: center; }
-}
+.hero-avatar, .profile-main-avatar { width: 290px; height: 290px; object-fit: cover; border-radius: 20px; }
+.profile-main-avatar { width: 160px; height: 160px; }
