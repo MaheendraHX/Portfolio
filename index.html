@@ -35,10 +35,11 @@
   <main>
     <section id="hero" class="hero">
       <div class="container hero-panel">
+        
         <div class="hero-content-wrapper">
           
           <div class="hero-card">
-            <p class="eyebrow">Hello, I'\''m</p>
+            <p class="eyebrow">Hello, I'm</p>
             <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
             <p class="hero-subtitle">A creative web designer who builds animated, polished websites with personality and thoughtful detail.</p>
             <div class="hero-actions">
@@ -50,7 +51,7 @@
 
           <div class="hero-image-box">
             <div class="hero-image-frame">
-              <img src="assets/profile.jpg" alt="Maheendra Menon" class="hero-avatar" onerror="this.style.display='\''none'\'\';">
+              <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active');">
               <div class="avatar-fallback-glow"></div>
             </div>
           </div>
@@ -63,7 +64,7 @@
     <div class="main-content" id="mainContent">
       <section id="about" class="about container">
         <h3>About</h3>
-        <p>Born on 13 October 2007 and currently studying at TocH Institute of Science and Technology in Ernakulam, I love creating websites. I don'\''t like plain pages — I always try to build sites with fluid animations and strong, modern design.</p>
+        <p>Born on 13 October 2007 and currently studying at TocH Institute of Science and Technology in Ernakulam, I love creating websites. I don't like plain pages — I always try to build sites with fluid animations and strong, modern design.</p>
       </section>
 
       <section id="projects" class="projects container">
@@ -106,7 +107,7 @@
 
       <section id="contact" class="contact container">
         <h3>Contact</h3>
-        <p>If you'\''d like to get in touch, email me at <a href="mailto:maheendramenon@gmail.com">maheendramenon@gmail.com</a>. I'\''m based in Ernakulam and available for web design work and internships.</p>
+        <p>If you'd like to get in touch, email me at <a href="mailto:maheendramenon@gmail.com">maheendramenon@gmail.com</a>. I'm based in Ernakulam and available for web design work and internships.</p>
       </section>
     </div>
   </main>
@@ -118,42 +119,42 @@
   </footer>
 
   <script>
-    document.getElementById('\''year'\'').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Toggle reveal wrapper layout classes
+    // Toggle reveal canvas state properties
     const showPortfolio = () => {
-      document.body.classList.add('\''show-content'\'');
+      document.body.classList.add('show-content');
     };
 
     const hidePortfolio = () => {
-      document.body.classList.remove('\''show-content'\'');
-      window.scrollTo({ top: 0, behavior: '\''smooth'\'' });
+      document.body.classList.remove('show-content');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // Frame-perfect scrolling offset calculations
+    // Frame-perfect navigation scrolling offset rules
     const scrollToSection = (targetId) => {
       const target = document.querySelector(targetId);
       if (!target) return;
       const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 110;
-      window.scrollTo({ top: Math.max(offsetTop, 0), behavior: '\''smooth'\'' });
+      window.scrollTo({ top: Math.max(offsetTop, 0), behavior: 'smooth' });
     };
 
-    // See My Profile Button Reveal Trigger
-    const revealBtn = document.getElementById('\''revealBtn'\'');
+    // Primary Call to Action Click Reveal Event Trigger
+    const revealBtn = document.getElementById('revealBtn');
     if (revealBtn) {
-      revealBtn.addEventListener('\''click'\'', (e) => {
+      revealBtn.addEventListener('click', (e) => {
         e.preventDefault();
         showPortfolio();
-        setTimeout(() => scrollToSection('\''#about'\''), 350); 
+        setTimeout(() => scrollToSection('#about'), 350); 
       });
     }
 
-    // Top Navigation Link Event Listeners
-    const anchorLinks = document.querySelectorAll('\''.nav a, .hero-actions a.ghost'\'');
+    // Secondary header navigation routing loops
+    const anchorLinks = document.querySelectorAll('.nav a, .hero-actions a.ghost');
     anchorLinks.forEach(link => {
-      link.addEventListener('\''click'\'', event => {
-        const href = link.getAttribute('\''href'\'');
-        if (!href || href === '\''#'\'' || href === '\''#hero'\'') return;
+      link.addEventListener('click', event => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#' || href === '#hero') return;
         
         event.preventDefault();
         showPortfolio();
@@ -161,32 +162,30 @@
       });
     });
 
-    // Big Hero Title Interactive Click Trigger
-    const heroName = document.getElementById('\''heroName'\'');
+    // Landing screen primary title trigger mechanics
+    const heroName = document.getElementById('heroName');
     const handleNameClick = () => {
       showPortfolio();
-      setTimeout(() => scrollToSection('\''#about'\''), 350);
+      setTimeout(() => scrollToSection('#about'), 350);
     };
     if (heroName) {
-      heroName.addEventListener('\''click'\'', handleNameClick);
-      heroName.addEventListener('\''touchend'\'', handleNameClick);
+      heroName.addEventListener('click', handleNameClick);
+      heroName.addEventListener('touchend', handleNameClick);
     }
 
-    // Interactive Brand Reset Loop Action (Pulls curtain back down)
-    const brandReset = document.getElementById('\''brandReset'\'');
+    // Top Brand Reset Loop listener (brings curtain overlay back down smoothly)
+    const brandReset = document.getElementById('brandReset');
     if (brandReset) {
-      brandReset.addEventListener('\''click'\'', (e) => {
+      brandReset.addEventListener('click', () => {
         hidePortfolio();
       });
     }
 
-    // Anchor hash link bookmark routing safety fallback
-    window.addEventListener('\''DOMContentLoaded'\'', () => {
-      if (location.hash && location.hash !== '\''#hero'\'') {
+    // Fallback security monitoring for native bookmark hashes
+    window.addEventListener('DOMContentLoaded', () => {
+      if (location.hash && location.hash !== '#hero') {
         showPortfolio();
         setTimeout(() => scrollToSection(location.hash), 400);
-      } else if (location.hash === '\''#hero'\'') {
-        history.replaceState(null, null, '\'' '\'');
       }
     });
   </script>
