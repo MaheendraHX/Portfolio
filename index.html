@@ -178,22 +178,23 @@
             const scrollToSection = (targetId) => {
               const target = document.querySelector(targetId);
               if (!target) return;
-              const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 120;
+              // Precision offset alignment to match the smooth layout shift
+              const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 100;
               window.scrollTo({ top: Math.max(offsetTop, 0), behavior: 'smooth' });
             };
 
-            // Handle the primary reveal button click
+            // Primary premium reveal interaction
             const revealBtn = document.getElementById('revealBtn');
             if (revealBtn) {
               revealBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 showPortfolio();
-                // Subtle delay ensures element display finishes rendering before browser calculates scrolling coordinates
-                setTimeout(() => scrollToSection('#about'), 50); 
+                // Give the CSS layout curtain transition time to move before focusing view
+                setTimeout(() => scrollToSection('#about'), 400); 
               });
             }
 
-            // Handle top navigation anchor links
+            // Top Navigation bar logic
             const anchorLinks = document.querySelectorAll('.nav a, .hero-actions a.ghost');
             anchorLinks.forEach(link => {
               link.addEventListener('click', event => {
@@ -202,28 +203,27 @@
         
                 event.preventDefault();
                 showPortfolio();
-                setTimeout(() => scrollToSection(href), 50);
+                setTimeout(() => scrollToSection(href), 400);
               });
             });
 
-            // Handle clicking the hero name text directly
+            // Brand Name Click trigger
             const heroName = document.getElementById('heroName');
             const handleNameClick = () => {
               showPortfolio();
-              setTimeout(() => scrollToSection('#about'), 50);
+              setTimeout(() => scrollToSection('#about'), 400);
             };
             if (heroName) {
               heroName.addEventListener('click', handleNameClick);
               heroName.addEventListener('touchend', handleNameClick);
             }
 
-            // Guard matching hash routing parameters on initial cold loads
+            // Deep routing protection for bookmark loads
             window.addEventListener('DOMContentLoaded', () => {
               if (location.hash && location.hash !== '#hero') {
                 showPortfolio();
-                setTimeout(() => scrollToSection(location.hash), 100);
+                setTimeout(() => scrollToSection(location.hash), 500);
               } else if (location.hash === '#hero') {
-                // Clear matching string paths gracefully without trigger resets
                 history.replaceState(null, null, ' ');
               }
             });
