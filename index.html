@@ -106,9 +106,35 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const showPortfolio = () => {
+      document.body.classList.add('show-content');
+    };
+
+    const scrollToSection = (targetId) => {
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        const section = document.querySelector(href);
+        if (!section) return;
+
+        event.preventDefault();
+        showPortfolio();
+        setTimeout(() => scrollToSection(href), 120);
+      });
+    });
+
     const heroName = document.getElementById('heroName');
-    heroName.addEventListener('click', () => document.body.classList.add('show-content'));
-    heroName.addEventListener('touchend', () => document.body.classList.add('show-content'));
+    heroName.addEventListener('click', showPortfolio);
+    heroName.addEventListener('touchend', showPortfolio);
   </script>
 </body>
 </html>
