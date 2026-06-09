@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -13,7 +13,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
+      <div class="brand" id="brandReset" style="cursor: pointer;">
         <div class="brand-left">
           <div class="avatar-small">MM</div>
           <div class="brand-text">
@@ -35,15 +35,27 @@
   <main>
     <section id="hero" class="hero">
       <div class="container hero-panel">
-        <div class="hero-card">
-          <p class="eyebrow">Hello, I'm</p>
-          <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
-          <p class="hero-subtitle">A creative web designer who builds animated, polished websites with personality and thoughtful detail.</p>
-          <div class="hero-actions">
-            <a class="btn reveal-link" href="#about" id="revealBtn">See my profile</a>
-            <a class="btn ghost reveal-link" href="#contact">Contact me</a>
+        
+        <div class="hero-content-wrapper">
+          
+          <div class="hero-card">
+            <p class="eyebrow">Hello, I'm</p>
+            <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
+            <p class="hero-subtitle">A creative web designer who builds animated, polished websites with personality and thoughtful detail.</p>
+            <div class="hero-actions">
+              <a class="btn reveal-link" href="#about" id="revealBtn">See my profile</a>
+              <a class="btn ghost reveal-link" href="#contact">Contact me</a>
+            </div>
+            <div class="hero-hint">Click above to explore full profile</div>
           </div>
-          <div class="hero-hint">Click above to explore full profile</div>
+
+          <div class="hero-image-box">
+            <div class="hero-image-frame">
+              <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active');">
+              <div class="avatar-fallback-glow"></div>
+            </div>
+          </div>
+
         </div>
         <div class="hero-decor" aria-hidden="true"></div>
       </div>
@@ -109,12 +121,17 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Toggle reveal wrapper layout class
+    // Toggle reveal canvas state properties
     const showPortfolio = () => {
       document.body.classList.add('show-content');
     };
 
-    // Frame-perfect scrolling offset calculations
+    const hidePortfolio = () => {
+      document.body.classList.remove('show-content');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Frame-perfect navigation scrolling offset rules
     const scrollToSection = (targetId) => {
       const target = document.querySelector(targetId);
       if (!target) return;
@@ -122,7 +139,7 @@
       window.scrollTo({ top: Math.max(offsetTop, 0), behavior: 'smooth' });
     };
 
-    // See My Profile Button Reveal Trigger
+    // Primary Call to Action Click Reveal Event Trigger
     const revealBtn = document.getElementById('revealBtn');
     if (revealBtn) {
       revealBtn.addEventListener('click', (e) => {
@@ -132,7 +149,7 @@
       });
     }
 
-    // Top Navigation Link Event Listeners
+    // Secondary header navigation routing loops
     const anchorLinks = document.querySelectorAll('.nav a, .hero-actions a.ghost');
     anchorLinks.forEach(link => {
       link.addEventListener('click', event => {
@@ -145,7 +162,7 @@
       });
     });
 
-    // Big Hero Title Interactive Click Trigger
+    // Landing screen primary title trigger mechanics
     const heroName = document.getElementById('heroName');
     const handleNameClick = () => {
       showPortfolio();
@@ -156,13 +173,19 @@
       heroName.addEventListener('touchend', handleNameClick);
     }
 
-    // Anchor hash link bookmark routing safety fallback
+    // Top Brand Reset Loop listener (brings curtain overlay back down smoothly)
+    const brandReset = document.getElementById('brandReset');
+    if (brandReset) {
+      brandReset.addEventListener('click', () => {
+        hidePortfolio();
+      });
+    }
+
+    // Fallback security monitoring for native bookmark hashes
     window.addEventListener('DOMContentLoaded', () => {
       if (location.hash && location.hash !== '#hero') {
         showPortfolio();
         setTimeout(() => scrollToSection(location.hash), 400);
-      } else if (location.hash === '#hero') {
-        history.replaceState(null, null, ' ');
       }
     });
   </script>
