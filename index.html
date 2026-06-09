@@ -33,11 +33,11 @@
 
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <p class="eyebrow">Hi, I'm Maheendra Menon.</p>
-          <h1>Designing and building websites with motion, clarity, and personality.</h1>
-          <p>I design and create websites that feel polished and modern, with fluid animations, clean layouts, and thoughtful details that make every page stand out.</p>
+      <div class="container hero-panel">
+        <div class="hero-card">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
+          <p class="hero-subtitle">A creative web designer who builds animated, polished websites with personality and thoughtful detail.</p>
           <p class="hero-actions">
             <a class="btn" href="#projects">See my work</a>
             <a class="btn ghost" href="#contact">Contact me</a>
@@ -47,7 +47,8 @@
       </div>
     </section>
 
-    <section id="about" class="about container">
+    <div class="main-content">
+      <section id="about" class="about container">
       <h3>About</h3>
       <p>Born on 13 October 2007 and currently studying at TocH Institute of Science and Technology in Ernakulam, I love creating websites. I don't like plain pages — I always try to build sites with fluid animations and strong, modern design.</p>
     </section>
@@ -94,6 +95,7 @@
       <h3>Contact</h3>
       <p>If you'd like to get in touch, email me at <a href="mailto:maheendramenon@gmail.com">maheendramenon@gmail.com</a>. I'm based in Ernakulam and available for web design work and internships.</p>
     </section>
+  </div>
   </main>
 
   <footer class="site-footer">
@@ -104,6 +106,9 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    const heroName = document.getElementById('heroName');
+    heroName.addEventListener('click', () => document.body.classList.add('show-content'));
+    heroName.addEventListener('touchend', () => document.body.classList.add('show-content'));
   </script>
 </body>
 </html>
