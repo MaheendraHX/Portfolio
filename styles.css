@@ -28,6 +28,20 @@ body.show-content .hero { transform: translateY(-100vh) scale(0.95); opacity: 0;
 .profile-main-avatar-frame { width: 160px; height: 160px; border-radius: 24px; overflow: hidden; }
 .profile-main-avatar { width: 100%; height: 100%; object-fit: cover; }
 
+.profile-main-header {
+  padding-bottom: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.show-content .profile-main-header {
+  opacity: 1;
+  pointer-events: all;
+}
+
 /* Typography */
 h1, h3 { letter-spacing: -0.02em; color: #fff; }
 .hero-name { font-size: clamp(2.5rem, 5vw, 4rem); cursor: pointer; }
