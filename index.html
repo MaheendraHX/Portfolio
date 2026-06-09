@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maheendra Menon</title>
+  <title>Maheendra Menon — Designer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,14 +12,13 @@
     <div class="container hero-panel">
       <div class="hero-content-wrapper">
         <div class="hero-card">
-          <p class="eyebrow">WEB DESIGNER • WEB DEVELOPER</p>
-          <h1 class="hero-name" id="heroName">Maheendra Menon.</h1>
-          <p class="hero-subtitle">I build websites that prioritize speed, clean architecture, and fluid user experiences. I don't believe in over-complicating things—I just believe in doing them right.</p>
+          <p class="eyebrow">Hello, I'm</p>
+          <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
+          <p class="hero-subtitle">A creative web designer who builds animated, polished websites with personality and thoughtful detail.</p>
           <div class="hero-actions">
-            <a class="btn" href="#" id="revealBtn">Let's talk shop.</a>
-            <a class="btn ghost" href="#contact">Get in touch.</a>
+            <a class="btn reveal-link" href="#about" id="revealBtn">See my profile</a>
+            <a class="btn ghost reveal-link" href="#contact">Contact me</a>
           </div>
-          <div class="hero-hint">Click above to explore.</div>
         </div>
         <div class="hero-image-box">
           <div class="hero-image-frame">
@@ -30,25 +29,18 @@
     </div>
   </section>
 
-  <main class="main-content" id="mainContent">
-    <div class="profile-main-header container">
-      <div class="profile-main-avatar-frame">
-        <img src="me.jpeg" alt="Maheendra Menon" class="profile-main-avatar">
-      </div>
-    </div>
-
+  <div class="main-content" id="mainContent">
     <section id="about" class="container">
-      <h3>Building for the future.</h3>
-      <p>I’m a developer based in Ernakulam, currently studying at TocH Institute of Science and Technology. I’ve always been drawn to the intersection of clean design and efficient code. I don't just build pages; I focus on creating digital experiences that feel fast, responsive, and intuitive.</p>
+      <h3>About</h3>
+      <p>Born on 13 October 2007 and currently studying at TocH Institute of Science and Technology in Ernakulam, I love creating websites. I don't like plain pages — I always try to build sites with fluid animations and strong, modern design.</p>
     </section>
-
-    </main>
+  </div>
 
   <script>
-    const revealBtn = document.getElementById('revealBtn');
-    revealBtn.addEventListener('click', (e) => {
+    const showPortfolio = () => document.body.classList.add('show-content');
+    document.getElementById('revealBtn').addEventListener('click', (e) => {
       e.preventDefault();
-      document.body.classList.add('show-content');
+      showPortfolio();
     });
   </script>
 </body>
