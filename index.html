@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
   <section id="hero" class="hero">
     <div class="hero-panel">
@@ -11,23 +14,21 @@
 
   <main class="main-content" id="mainContent">
     <section id="about">
-      <h3>About</h3>
-      <p>Content goes here...</p>
+      <div class="content-card">
+        <h3>About</h3>
+        <p>Designer & Web Developer based in Ernakulam.</p>
+      </div>
     </section>
     <section id="projects">
-      <h3>Projects</h3>
-      </section>
-    <section id="skills">
-      <h3>Skills</h3>
-      <ul class="skill-list">
-        <li>HTML</li><li>CSS</li><li>JavaScript</li>
-      </ul>
+      <div class="content-card">
+        <h3>Projects</h3>
+        <p>Interactive web experiences.</p>
+      </div>
     </section>
-    <section id="contact">
-      <h3>Hit me up!</h3>
-      <div class="contact-grid">
-        <a href="#" class="contact-link">Instagram</a>
-        <a href="#" class="contact-link">Gmail</a>
+    <section id="skills">
+      <div class="content-card">
+        <h3>Skills</h3>
+        <p>HTML, CSS, JavaScript, Web Design.</p>
       </div>
     </section>
   </main>
@@ -35,24 +36,21 @@
   <script>
     const hero = document.getElementById('hero');
     const startBtn = document.getElementById('startBtn');
-
-    // Fade out Hero
-    const showPortfolio = () => {
-      hero.style.opacity = '0';
-      setTimeout(() => hero.style.display = 'none', 1000);
-    };
+    const main = document.getElementById('mainContent');
 
     startBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      showPortfolio();
+      hero.style.opacity = '0';
+      hero.style.pointerEvents = 'none';
+      document.body.style.overflowY = 'auto';
+      setTimeout(() => hero.style.display = 'none', 1000);
     });
 
-    // Observer for section fade-in
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('is-visible');
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.5 });
 
     document.querySelectorAll('.main-content > section').forEach(s => observer.observe(s));
   </script>
