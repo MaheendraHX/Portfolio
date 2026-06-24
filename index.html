@@ -297,6 +297,75 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+/* ============================================================
+   PORTFOLIO — SCRIPT
+   ============================================================ */
+
+// ── DOM refs ──────────────────────────────────────────────────
+const overlay     = document.getElementById('intro-overlay');
+const introWord   = document.getElementById('introWord');
+const brandReset  = document.getElementById('brandReset');
+const revealBtn   = document.getElementById('revealBtn');
+const contactBtn  = document.getElementById('contactBtn');
+
+// ── Footer year ───────────────────────────────────────────────
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── INTRO SEQUENCE ────────────────────────────────────────────
+function runIntro() {
+  document.body.classList.remove('unlocked', 'hero-ready');
+  overlay.style.display = 'flex';
+  overlay.style.opacity = '1';
+  introWord.textContent = "Welcome"; 
+  introWord.classList.add('visible');
+
+  setTimeout(() => {
+    introWord.classList.remove('visible');
+    introWord.classList.add('exit');
+
+    setTimeout(() => {
+      overlay.style.opacity = '0';
+      document.body.classList.add('hero-ready');
+      setTimeout(() => { overlay.style.display = 'none'; }, 1000);
+    }, 500);
+  }, 2000);
+}
+
+// ── FLUID NAVIGATION ──────────────────────────────────────────
+function unlockPortfolio(targetId) {
+  document.body.classList.add('unlocked');
+  document.body.classList.add('show-content');
+
+  setTimeout(() => {
+    const el = document.querySelector(targetId);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 1000); 
+}
+
+// ── BRAND RESET ───────────────────────────────────────────────
+function resetToHero() {
+  document.body.classList.remove('unlocked', 'show-content', 'hero-ready');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(runIntro, 500);
+}
+
+// ── OBSERVER ──────────────────────────────────────────────────
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal-section').forEach(s => sectionObserver.observe(s));
+
+// ── EVENT LISTENERS ───────────────────────────────────────────
+if (revealBtn) revealBtn.addEventListener('click', (e) => { e.preventDefault(); unlockPortfolio('#about'); });
+if (contactBtn) contactBtn.addEventListener('click', (e) => { e.preventDefault(); unlockPortfolio('#contact'); });
+if (brandReset) brandReset.addEventListener('click', resetToHero);
+
+// ── INIT ──────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', runIntro);
+</script>
 </body>
 </html>
