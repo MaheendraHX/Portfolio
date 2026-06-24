@@ -7,28 +7,28 @@
 <title>Maheendra Menon — Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-  #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-</style>
 </head>
 <body>
 
-<header class="site-header">
+<!-- INTRO OVERLAY -->
+<div id="intro-overlay" aria-hidden="true">
+  <div class="intro-noise"></div>
+  <span class="intro-word" id="introWord">Welcome</span>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <div class="brand" id="brandReset" style="cursor: pointer;">
-      <div class="brand-left">
-        <div class="avatar-small">MM</div>
-        <div class="brand-text">
-          <h1 class="name">Maheendra Menon</h1>
-          <p class="role">Designer & Web Developer</p>
-        </div>
+    <button class="brand" id="brandReset" aria-label="Return to home">
+      <div class="avatar-small" aria-hidden="true">MM</div>
+      <div class="brand-text">
+        <span class="name">Maheendra Menon</span>
+        <span class="role">Designer & Web Developer</span>
       </div>
-    </div>
-    <nav class="nav">
+    </button>
+    <nav class="nav" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -40,113 +40,249 @@
 </header>
 
 <main>
-  <section id="hero" class="hero">
-    <div class="container hero-panel">
-      <div class="hero-content-wrapper">
 
-        <div class="hero-card">
-          <p class="eyebrow">Hello, I'm</p>
-          <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
-          <p class="hero-subtitle">I build websites that don't look like websites. I design experiences that move, react, and actually feel alive. Zero boring pages. That's the standard.</p>
-          <div class="hero-actions">
-            <a class="btn reveal-link" href="#about" id="revealBtn">See my profile</a>
-            <a class="btn ghost reveal-link" href="#contact">Get in touch</a>
-          </div>
-          <div class="hero-hint">Click above to explore full profile</div>
+  <!-- HERO -->
+  <section id="hero" class="hero" aria-label="Introduction">
+    <div class="hero-noise" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+    <div class="hero-inner container">
+
+      <div class="hero-card">
+        <p class="eyebrow" aria-hidden="true">Hello, I'm</p>
+        <h1 class="hero-name">Maheendra<br>Menon</h1>
+        <p class="hero-subtitle">I build websites that don't look like websites. I design experiences that move, react, and actually feel alive. Zero boring pages — that's the standard.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#about" id="revealBtn">See my profile</a>
+          <a class="btn btn--ghost" href="#contact" id="contactBtn">Get in touch</a>
         </div>
-
-        <div class="hero-image-box">
-          <div class="hero-image-frame">
-            <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active');">
-            <div class="avatar-fallback-glow"></div>
-          </div>
-        </div>
-
       </div>
-      <div class="hero-decor" aria-hidden="true"></div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-image-frame">
+          <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active');">
+          <div class="avatar-fallback-initials">MM</div>
+        </div>
+        <div class="hero-visual-ring hero-visual-ring--1"></div>
+        <div class="hero-visual-ring hero-visual-ring--2"></div>
+      </div>
+
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
+  <!-- MAIN CONTENT -->
   <div class="main-content" id="mainContent">
 
-    <section id="about" class="about container reveal-on-scroll">
-      <h3>About</h3>
-      <p>Currently studying at TocH Institute of Science and Technology in Ernakulam, I love creating websites. I don't like plain pages — I always try to build sites with fluid animations and strong, modern design.</p>
-    </section>
-
-    <section id="projects" class="projects container reveal-on-scroll">
-      <h3>Projects</h3>
-      <div class="project-grid">
-        <article class="project">
-          <h4>Car Showcase Website</h4>
-          <p>A website for a car business with polished visuals, smooth transitions, and easy navigation. The design highlights each vehicle while keeping the experience clean and engaging.</p>
-          <p class="project-links"><a href="#">Live demo</a> · <a href="#">Source</a></p>
-        </article>
-        <article class="project">
-          <h4>AI Math Game</h4>
-          <p>A fun, interactive game that uses computer vision to track hand movements and verify math answers in real-time.</p>
-          <p class="project-links"><a href="https://maheendrahx.github.io/Gesture-Math/" target="_blank">Live demo</a> · <a href="https://github.com/MaheendraHX/Math-game" target="_blank">Source</a></p>
-        </article>
-        <article class="project">
-          <h4>Disaster Alert App <span class="wip-badge">In Progress</span></h4>
-          <p>A responsive web app that delivers real-time critical hazard alerts and emergency information. Features localized safety updates, quick-action SOS mechanics, and an intuitive layout built for high-stress situations.</p>
-          <p class="project-links"><a href="https://maheendrahx.github.io/Disaster-Alert-System/" target="_blank">Live demo</a> · <a href="https://github.com/MaheendraHX/Disaster-Alert-System" target="_blank">Source</a></p>
-        </article>
+    <!-- ABOUT -->
+    <section id="about" class="section about-section reveal-section">
+      <div class="container about-grid">
+        <div class="about-left">
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-title">Building the web,<br><em>one pixel at a time.</em></h2>
+          <p class="about-body">Currently in my first year at TocH Institute of Science and Technology, Ernakulam. I'm obsessed with the intersection of code and design — fluid animations, tight layouts, and interactions that feel genuinely alive. Plain pages aren't an option.</p>
+          <p class="about-body">Every project I touch gets the same treatment: relentless attention to motion, hierarchy, and detail. I'm here to build things that make people stop scrolling.</p>
+        </div>
+        <div class="about-right">
+          <div class="stat-stack">
+            <div class="stat-card">
+              <span class="stat-num">1<sup>st</sup></span>
+              <span class="stat-label">Year B.Tech</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card stat-card--accent">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Boring Pages Refused</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">2029</span>
+              <span class="stat-label">Graduation</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="experience" class="experience container reveal-on-scroll">
-      <h3>Experience</h3>
-      <div class="experience-grid">
-        <article class="experience-card">
-          <h4>Student Web Developer</h4>
-          <p>Completed my first year of college and already built websites that focus on animation and polished design. Working hard every project to sharpen skills in frontend development and UI design.</p>
-        </article>
-        <article class="experience-card">
-          <h4>Education</h4>
-          <p>Pursuing a B.Tech degree at TocH Institute of Science and Technology in Ernakulam, with expected completion in 2029.</p>
-        </article>
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects-section reveal-section">
+      <div class="container">
+        <p class="section-eyebrow">Projects</p>
+        <h2 class="section-title">What I've built</h2>
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <div class="project-index">01</div>
+              <div class="project-status">Live</div>
+            </div>
+            <h3 class="project-title">Car Showcase Website</h3>
+            <p class="project-desc">A polished website for a car business — smooth transitions, strong visuals, and navigation that keeps the experience clean and the vehicles front and center.</p>
+            <div class="project-links">
+              <a href="#" class="project-link project-link--primary">Live demo ↗</a>
+              <a href="#" class="project-link project-link--secondary">Source ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <div class="project-index">02</div>
+              <div class="project-status">Live</div>
+            </div>
+            <h3 class="project-title">AI Math Game</h3>
+            <p class="project-desc">A fun, interactive game using computer vision to track hand movements and verify math answers in real-time. Where education meets gesture control.</p>
+            <div class="project-links">
+              <a href="https://maheendrahx.github.io/Gesture-Math/" target="_blank" class="project-link project-link--primary">Live demo ↗</a>
+              <a href="https://github.com/MaheendraHX/Math-game" target="_blank" class="project-link project-link--secondary">Source ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card project-card--wip">
+            <div class="project-card__top">
+              <div class="project-index">03</div>
+              <div class="project-status project-status--wip">In Progress</div>
+            </div>
+            <h3 class="project-title">Disaster Alert App</h3>
+            <p class="project-desc">Real-time critical hazard alerts and emergency information. Localized safety updates, quick-action SOS mechanics, and a layout built for high-stress situations.</p>
+            <div class="project-links">
+              <a href="https://maheendrahx.github.io/Disaster-Alert-System/" target="_blank" class="project-link project-link--primary">Live demo ↗</a>
+              <a href="https://github.com/MaheendraHX/Disaster-Alert-System" target="_blank" class="project-link project-link--secondary">Source ↗</a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="skills container reveal-on-scroll">
-      <h3>Skills</h3>
-      <ul class="skill-list">
-        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Web Design</li><li>Animations</li><li>Responsive Layouts</li>
-      </ul>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience-section reveal-section">
+      <div class="container">
+        <p class="section-eyebrow">Experience</p>
+        <h2 class="section-title">Where I'm at</h2>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="exp-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3 class="exp-title">Student Web Developer</h3>
+              <p class="exp-body">First year of college — already building websites focused on animation and polished design. Every project sharpens frontend skills and pushes UI craft further.</p>
+            </div>
+          </article>
+          <article class="experience-card">
+            <div class="exp-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <h3 class="exp-title">B.Tech — TocH Institute</h3>
+              <p class="exp-body">Pursuing a B.Tech degree at TocH Institute of Science and Technology, Ernakulam. Expected graduation: 2029.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="languages" class="languages container reveal-on-scroll">
-      <h3>Languages</h3>
-      <ul class="skill-list">
-        <li>English</li><li>Malayalam</li><li>Hindi</li>
-      </ul>
+    <!-- SKILLS -->
+    <section id="skills" class="section skills-section reveal-section">
+      <div class="container">
+        <p class="section-eyebrow">Skills</p>
+        <h2 class="section-title">What I work with</h2>
+        <ul class="skill-list" role="list">
+          <li class="skill-item">HTML</li>
+          <li class="skill-item">CSS</li>
+          <li class="skill-item">JavaScript</li>
+          <li class="skill-item">Web Design</li>
+          <li class="skill-item">Animations</li>
+          <li class="skill-item">Responsive Layouts</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="contact" class="contact container reveal-on-scroll">
-      <h3>Contact</h3>
-      <p class="contact-intro">Got a project in mind or just want to say hi? I'm open to freelance work, internships, and collabs. Pick your preferred way to reach me.</p>
-      <div class="contact-grid">
-        <a href="mailto:maheendramenon@gmail.com" class="contact-card" target="_blank">
-          <div class="contact-icon email-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg></div>
-          <div class="contact-info"><span class="contact-label">Email</span><span class="contact-value">maheendramenon@gmail.com</span></div>
-          <div class="contact-arrow">→</div>
-        </a>
-        <a href="tel:+919746945370" class="contact-card" target="_blank">
-          <div class="contact-icon phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div class="contact-info"><span class="contact-label">Phone</span><span class="contact-value">+91 97469 45370</span></div>
-          <div class="contact-arrow">→</div>
-        </a>
-        <a href="https://www.instagram.com/x_tr_em_er/" class="contact-card" target="_blank">
-          <div class="contact-icon instagram-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></div>
-          <div class="contact-info"><span class="contact-label">Instagram</span><span class="contact-value">@x_tr_em_er</span></div>
-          <div class="contact-arrow">→</div>
-        </a>
-        <a href="https://github.com/MaheendraHX" class="contact-card" target="_blank">
-          <div class="contact-icon github-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
-          <div class="contact-info"><span class="contact-label">GitHub</span><span class="contact-value">MaheendraHX</span></div>
-          <div class="contact-arrow">→</div>
-        </a>
+    <!-- LANGUAGES -->
+    <section id="languages" class="section languages-section reveal-section">
+      <div class="container">
+        <p class="section-eyebrow">Languages</p>
+        <h2 class="section-title">How I communicate</h2>
+        <div class="lang-strip">
+          <div class="lang-item">
+            <div class="lang-name">Malayalam</div>
+            <div class="lang-level-label">Native</div>
+            <div class="lang-bar"><div class="lang-bar__fill" style="--fill: 100%"></div></div>
+          </div>
+          <div class="lang-divider" aria-hidden="true"></div>
+          <div class="lang-item">
+            <div class="lang-name">English</div>
+            <div class="lang-level-label">Fluent &amp; Conversational</div>
+            <div class="lang-bar"><div class="lang-bar__fill" style="--fill: 88%"></div></div>
+          </div>
+          <div class="lang-divider" aria-hidden="true"></div>
+          <div class="lang-item">
+            <div class="lang-name">Hindi</div>
+            <div class="lang-level-label">Conversational</div>
+            <div class="lang-bar"><div class="lang-bar__fill" style="--fill: 55%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section reveal-section">
+      <div class="container">
+        <p class="section-eyebrow">Contact</p>
+        <h2 class="section-title">Let's build something.</h2>
+        <p class="contact-intro">Open to freelance work, internships, and collabs. Pick your channel — I respond fast.</p>
+        <div class="contact-grid">
+
+          <a href="mailto:maheendramenon@gmail.com" class="contact-card" target="_blank">
+            <div class="contact-icon email-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">maheendramenon@gmail.com</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a href="tel:+919746945370" class="contact-card" target="_blank">
+            <div class="contact-icon phone-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+91 97469 45370</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a href="https://www.instagram.com/x_tr_em_er/" class="contact-card" target="_blank">
+            <div class="contact-icon instagram-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Instagram</span>
+              <span class="contact-value">@x_tr_em_er</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/MaheendraHX" class="contact-card" target="_blank">
+            <div class="contact-icon github-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">MaheendraHX</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+        </div>
       </div>
     </section>
 
@@ -154,27 +290,13 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p>© <span id="year"></span> Maheendra Menon — Designed & built by me.</p>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Maheendra Menon</span>
+    <span class="footer-sep" aria-hidden="true">—</span>
+    <span>Designed &amp; built by me.</span>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  window.addEventListener('load', () => {
-    const overlay = document.createElement('div');
-    overlay.id = 'intro-overlay';
-    overlay.innerHTML = `<h1 style="color:white; font-family:Poppins;">Maheendra Menon</h1>`;
-    document.body.appendChild(overlay);
-    setTimeout(() => { overlay.style.opacity = '0'; setTimeout(() => overlay.remove(), 1200); }, 2000);
-  });
-  const observer = new IntersectionObserver((e) => e.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('is-visible'); }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal-on-scroll').forEach(s => observer.observe(s));
-  const showPortfolio = (id) => { document.body.classList.add('show-content'); setTimeout(() => { const t = document.querySelector(id); if(t) t.scrollIntoView({ behavior: 'smooth' }); }, 600); };
-  document.querySelectorAll('a').forEach(l => l.addEventListener('click', e => { const h = l.getAttribute('href'); if(h.startsWith('#') && h !== '#hero') { e.preventDefault(); showPortfolio(h); } }));
-  document.getElementById('brandReset').addEventListener('click', () => { document.body.classList.remove('show-content'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  document.getElementById('revealBtn').addEventListener('click', e => { e.preventDefault(); showPortfolio('#about'); });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
