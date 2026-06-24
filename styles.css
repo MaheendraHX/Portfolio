@@ -12,6 +12,7 @@
   --gap: 24px;
 }
 
+
 body {
   font-family: Inter, system-ui, -apple-system, sans-serif;
   background: radial-gradient(800px 400px at 10% 10%, rgba(197, 160, 89, 0.12), transparent),
