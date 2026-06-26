@@ -36,27 +36,83 @@
 
   <!-- HERO -->
   <section id="hero" class="hero">
+
+    <div class="hero-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-orb orb-2" aria-hidden="true"></div>
+    <div class="hero-orb orb-3" aria-hidden="true"></div>
+
+    <div class="hero-chip chip-1" aria-hidden="true">
+      <span class="chip-dot"></span> B.Tech · TocH
+    </div>
+    <div class="hero-chip chip-2" aria-hidden="true">
+      <span class="chip-dot"></span> Kerala, India
+    </div>
+    <div class="hero-chip chip-3" aria-hidden="true">
+      <span class="chip-dot dot-green"></span> Open to work
+    </div>
+
     <div class="hero-panel">
       <div class="hero-content-wrapper">
         <div class="hero-card">
-          <p class="eyebrow">Hello, I'm</p>
-          <h1 class="hero-name" id="heroName">Maheendra Menon</h1>
-          <p class="hero-subtitle">I build websites that don't look like websites. I design experiences that move, react, and actually feel alive. Zero boring pages. That's the standard.</p>
+
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            Designer &amp; Developer
+          </div>
+
+          <h1 class="hero-name" id="heroName">
+            <span class="name-line">Maheendra</span>
+            <span class="name-line name-accent">Menon.</span>
+          </h1>
+
+          <p class="hero-subtitle">I build websites that don't look like websites — experiences that <em>move</em>, <em>react</em>, and feel alive. Zero boring pages. That's the standard.</p>
+
           <div class="hero-actions">
-            <a class="btn" href="#about" id="revealBtn">Dive in</a>
+            <a class="btn" href="#about" id="revealBtn">
+              Dive in
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
             <a class="btn ghost" href="#contact" id="contactBtn">Get in touch</a>
           </div>
-          <p class="hero-hint">↑ click to explore</p>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="meta-num">3+</span>
+              <span class="meta-lbl">Projects</span>
+            </div>
+            <div class="hero-meta-sep"></div>
+            <div class="hero-meta-item">
+              <span class="meta-num">3</span>
+              <span class="meta-lbl">Languages</span>
+            </div>
+            <div class="hero-meta-sep"></div>
+            <div class="hero-meta-item">
+              <span class="meta-num">1st</span>
+              <span class="meta-lbl">Year B.Tech</span>
+            </div>
+          </div>
+
         </div>
+
         <div class="hero-image-box">
           <div class="hero-image-frame">
             <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active')">
             <div class="avatar-fallback-glow"></div>
           </div>
+          <div class="hero-image-ring" aria-hidden="true"></div>
+          <div class="hero-image-tag" aria-hidden="true">
+            <span>✦</span> UI · Motion · Code
+          </div>
         </div>
+
       </div>
-      <div class="hero-decor" aria-hidden="true"></div>
     </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+
   </section>
 
   <!-- MAIN CONTENT -->
@@ -384,16 +440,24 @@
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
+  // Instant jump — used only for the hero buttons (avoids flash of About before Contact)
   const jumpToSection = (targetId) => {
     const target = document.querySelector(targetId);
     if (!target) return;
-    // Use instant scroll to avoid the "flash" issue with smooth + show
     setTimeout(() => {
       target.scrollIntoView({ behavior: 'instant', block: 'start' });
     }, 50);
   };
 
-  // Reveal — "See my profile"
+  // Smooth scroll — used for nav links once content is already visible
+  const smoothToSection = (targetId) => {
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+  };
+
+  // Reveal — "Dive in"
   const revealBtn = document.getElementById('revealBtn');
   if (revealBtn) {
     revealBtn.addEventListener('click', (e) => {
@@ -413,14 +477,18 @@
     });
   }
 
-  // Nav links
+  // Nav links — smooth scroll if already showing content, instant reveal+jump if on hero
   document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');
       if (!href || href === '#' || href === '#hero') return;
       e.preventDefault();
-      showPortfolio();
-      jumpToSection(href);
+      if (isShowingContent) {
+        smoothToSection(href);
+      } else {
+        showPortfolio();
+        jumpToSection(href);
+      }
     });
   });
 
