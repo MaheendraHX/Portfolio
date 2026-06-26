@@ -416,37 +416,7 @@ body.show-content .hero {
 }
 .hero-image-tag span { color: var(--accent-1); margin-right: 4px; }
 
-/* Scroll indicator */
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  z-index: 5;
-  pointer-events: none;
-}
-.hero-scroll-indicator span {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  opacity: 0.5;
-}
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(180deg, var(--accent-1), transparent);
-  animation: scrollDrop 2s ease-in-out infinite;
-}
-@keyframes scrollDrop {
-  0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
-  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
-  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-}
+
 
 
 /* ============================
