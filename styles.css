@@ -499,6 +499,11 @@ body.show-content .main-content {
   box-shadow: 0 0 10px rgba(180, 30, 50, 0.15);
 }
 
+.project-card:has(.gesture-logo-wrap):hover {
+  border-color: rgba(180, 30, 50, 0.55);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(180, 30, 50, 0.15), 0 0 40px rgba(180, 30, 50, 0.08);
+}
+
 .disaster-logo-wrap {
   background: #fff;
   border: 1px solid rgba(220, 80, 30, 0.35);
