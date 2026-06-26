@@ -474,6 +474,37 @@ body.show-content .main-content {
   cursor: default;
 }
 
+.proj-logo-wrap {
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: unset;
+  flex-shrink: 0;
+}
+
+.proj-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gesture-logo-wrap {
+  background: #000;
+  border: 1px solid rgba(180, 30, 50, 0.4);
+  box-shadow: 0 0 10px rgba(180, 30, 50, 0.15);
+}
+
+.disaster-logo-wrap {
+  background: #fff;
+  border: 1px solid rgba(220, 80, 30, 0.35);
+  box-shadow: 0 0 10px rgba(220, 80, 30, 0.12);
+}
+
 .project-card-top {
   display: flex;
   align-items: center;
