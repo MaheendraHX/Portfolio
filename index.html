@@ -9,14 +9,14 @@
 <!-- Favicon: gold M -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f1c17'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23d4af37'>M</text></svg>">
 
-<!-- Open Graph / link previews (Fixed path to Portfolio repo) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://maheendrahx.github.io/Portfolio/" />
 <meta property="og:title" content="Maheendra Menon — Designer & Developer" />
 <meta property="og:description" content="Frontend developer crafting fluid, animated web experiences from Kerala. Obsessed with motion, design systems, and premium UI." />
 <meta property="og:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg" />
 
-<!-- Twitter card (Fixed path to Portfolio repo) -->
+<!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Maheendra Menon — Designer & Developer" />
 <meta name="twitter:description" content="Frontend developer crafting fluid, animated web experiences from Kerala." />
@@ -24,11 +24,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Added Playfair Display (Serif Italic) for high-end contrast -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -39,7 +41,7 @@
         <span class="role">Designer & Web Developer</span>
       </div>
     </div>
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -47,12 +49,16 @@
       <a href="#languages">Languages</a>
       <a href="#contact">Contact</a>
     </nav>
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
+  <!-- ==================== HERO ==================== -->
   <section id="hero" class="hero">
 
     <div class="hero-orb orb-1" aria-hidden="true"></div>
@@ -79,28 +85,28 @@
           </div>
 
           <h1 class="hero-name" id="heroName">
-            <span class="name-line">Maheendra</span>
-            <span class="name-line name-accent">Menon.</span>
+            <span class="name-line" data-split>Maheendra</span>
+            <span class="name-line name-accent" data-split>Menon.</span>
           </h1>
 
           <p class="hero-subtitle">I build websites that don't look like websites — experiences that <em>move</em>, <em>react</em>, and feel alive. Zero boring pages. That's the standard.</p>
 
           <div class="hero-actions">
-            <a class="btn" href="#about" id="revealBtn">
+            <a class="btn btn-primary" href="#about" id="revealBtn">
               Dive in
               <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a class="btn ghost" href="#contact" id="contactBtn">Get in touch</a>
+            <a class="btn btn-ghost" href="#contact" id="contactBtn">Get in touch</a>
           </div>
 
           <div class="hero-meta">
             <div class="hero-meta-item">
-              <span class="meta-num">3+</span>
+              <span class="meta-num" data-count="3" data-suffix="+">0</span>
               <span class="meta-lbl">Projects</span>
             </div>
             <div class="hero-meta-sep"></div>
             <div class="hero-meta-item">
-              <span class="meta-num">3</span>
+              <span class="meta-num" data-count="3">0</span>
               <span class="meta-lbl">Languages</span>
             </div>
             <div class="hero-meta-sep"></div>
@@ -112,8 +118,8 @@
 
         </div>
 
-        <div class="hero-image-box">
-          <div class="hero-image-frame">
+        <div class="hero-image-box" id="heroImageBox">
+          <div class="hero-image-frame" id="heroImageFrame">
             <img src="me.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active')">
             <div class="avatar-fallback-glow"></div>
           </div>
@@ -126,9 +132,15 @@
       </div>
     </div>
 
+    <!-- Scroll down indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-indicator-text">Scroll</span>
+      <div class="scroll-indicator-line"></div>
+    </div>
+
   </section>
 
-  <!-- MAIN CONTENT -->
+  <!-- ==================== MAIN CONTENT ==================== -->
   <div class="main-content" id="mainContent">
 
     <!-- ABOUT -->
@@ -144,19 +156,19 @@
           <div class="about-right">
             <div class="about-stats">
               <div class="stat-item">
-                <span class="stat-val">3+</span>
+                <span class="stat-val" data-count="3" data-suffix="+">0</span>
                 <span class="stat-lbl">Projects built</span>
               </div>
               <div class="stat-item">
-                <span class="stat-val">2025</span>
+                <span class="stat-val" data-count="2025">0</span>
                 <span class="stat-lbl">Started coding</span>
               </div>
               <div class="stat-item">
-                <span class="stat-val">2029</span>
+                <span class="stat-val" data-count="2029">0</span>
                 <span class="stat-lbl">B.Tech graduation</span>
               </div>
               <div class="stat-item">
-                <span class="stat-val">3</span>
+                <span class="stat-val" data-count="3">0</span>
                 <span class="stat-lbl">Languages spoken</span>
               </div>
             </div>
@@ -231,7 +243,7 @@
               <div class="project-status coming-soon">Coming soon</div>
             </div>
             <h3>ARIA System</h3>
-            <p>ARIA is a Forest Luxe personal AI OS I built for my own workflow — combining live web search, voice-first interaction, and fine-grained PC control. Visitors get a safe demo version in the browser that mimics the experience without accessing my actual machine.</p>
+            <p>ARIA is a Forest Luxe personal AI OS I built for my own workflow — combining live web search, voice-first interaction, and fine-grained PC control. Visitors get a safe demo version in the browser.</p>
             <div class="project-links project-links-split">
               <span class="proj-link personal-pill">Personal project</span>
             </div>
@@ -288,100 +300,80 @@
         <div class="section-label">04 — Skills & Toolkit</div>
         <h2 class="section-title">My toolkit,<br><em>so far.</em></h2>
         <div class="skills-layout">
-          
-          <!-- Column 1: Core Fundamentals & Concept Focus -->
+
           <div class="skills-left">
             <div class="skill-group">
-              <p class="skill-group-label">Core Fundamentals</p>
+              <p class="skill-group-label">Core</p>
               <div class="skill-cards">
                 <div class="skill-card">
-                  <div class="skill-icon">⬡</div>
+                  <div class="skill-icon"><span>&lt;/&gt;</span></div>
                   <span>HTML</span>
-                  <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-icon">✦</div>
+                  <div class="skill-icon"><span>{ }</span></div>
                   <span>CSS</span>
-                  <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-icon">◈</div>
+                  <div class="skill-icon"><span>JS</span></div>
                   <span>JavaScript</span>
-                  <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
                 </div>
               </div>
             </div>
-            
-            <div class="skill-group" style="margin-top: 32px;">
-              <p class="skill-group-label">Focus & Craft</p>
+            <div class="skill-group" style="margin-top:28px">
+              <p class="skill-group-label">Craft</p>
               <div class="skill-cards">
                 <div class="skill-card">
-                  <div class="skill-icon">◉</div>
+                  <div class="skill-icon"><span>◉</span></div>
                   <span>Web Design</span>
-                  <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-icon">◌</div>
+                  <div class="skill-icon"><span>◌</span></div>
                   <span>Animations</span>
-                  <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-icon">▦</div>
+                  <div class="skill-icon"><span>▦</span></div>
                   <span>Responsive</span>
-                  <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
                 </div>
               </div>
             </div>
           </div>
-          
-          <!-- Column 2: Tech Stack Grid -->
+
           <div class="skills-right">
             <p class="skill-group-label">Technologies & Tools</p>
             <div class="tech-grid">
-              
-              <div class="tech-item">
-                <span class="tech-icon">⚛</span>
-                <span class="tech-name">React</span>
+              <div class="tech-item" data-color="#e34f26">
+                <span class="tech-icon">&lt;/&gt;</span>
+                <span class="tech-name">HTML5</span>
               </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">▲</span>
-                <span class="tech-name">Next.js</span>
+              <div class="tech-item" data-color="#1572b6">
+                <span class="tech-icon">{ }</span>
+                <span class="tech-name">CSS3</span>
               </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">🍃</span>
-                <span class="tech-name">Tailwind</span>
+              <div class="tech-item" data-color="#f7df1e">
+                <span class="tech-icon">JS</span>
+                <span class="tech-name">JavaScript</span>
               </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">⬢</span>
-                <span class="tech-name">Node.js</span>
-              </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">🗲</span>
-                <span class="tech-name">Vite</span>
-              </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">⌥</span>
-                <span class="tech-name">Git</span>
-              </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">🐍</span>
+              <div class="tech-item" data-color="#3776ab">
+                <span class="tech-icon">Py</span>
                 <span class="tech-name">Python</span>
               </div>
-              
-              <div class="tech-item">
-                <span class="tech-icon">⛃</span>
-                <span class="tech-name">SQL</span>
+              <div class="tech-item" data-color="#f05032">
+                <span class="tech-icon">⑂</span>
+                <span class="tech-name">Git</span>
               </div>
-              
+              <div class="tech-item" data-color="#a259ff">
+                <span class="tech-icon">Fg</span>
+                <span class="tech-name">Figma</span>
+              </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>
@@ -435,13 +427,9 @@
         <h2 class="section-title contact-headline">Let's build<br><em>something great.</em></h2>
         <p class="contact-sub">Open to freelance work, internships, and collabs. Pick your way to reach me.</p>
         <div class="contact-grid">
-
           <a href="mailto:maheendramenon@gmail.com" class="contact-card" target="_blank">
             <div class="contact-icon email-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="3"/>
-                <path d="M2 7l10 7 10-7"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
             </div>
             <div class="contact-info">
               <span class="contact-label">Email</span>
@@ -449,12 +437,9 @@
             </div>
             <div class="contact-arrow">→</div>
           </a>
-
           <a href="tel:+919746945370" class="contact-card" target="_blank">
             <div class="contact-icon phone-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             </div>
             <div class="contact-info">
               <span class="contact-label">Phone</span>
@@ -462,14 +447,9 @@
             </div>
             <div class="contact-arrow">→</div>
           </a>
-
           <a href="https://www.instagram.com/x_tr_em_er/" class="contact-card" target="_blank">
             <div class="contact-icon instagram-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
             </div>
             <div class="contact-info">
               <span class="contact-label">Instagram</span>
@@ -477,12 +457,9 @@
             </div>
             <div class="contact-arrow">→</div>
           </a>
-
           <a href="https://github.com/MaheendraHX" class="contact-card" target="_blank">
             <div class="contact-icon github-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             </div>
             <div class="contact-info">
               <span class="contact-label">GitHub</span>
@@ -490,12 +467,11 @@
             </div>
             <div class="contact-arrow">→</div>
           </a>
-
         </div>
       </div>
     </section>
 
-  </div><!-- end main-content -->
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -505,62 +481,133 @@
 </footer>
 
 <script>
-  let isShowingContent = false;
+(() => {
+  'use strict';
 
+  /* ============================
+     STATE
+     ============================ */
+  let isShowingContent = false;
+  const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
+
+  /* ============================
+     1. HERO TEXT SPLIT ANIMATION
+     ============================ */
+  document.querySelectorAll('[data-split]').forEach(el => {
+    const text = el.textContent;
+    el.textContent = '';
+    el.setAttribute('aria-label', text);
+    [...text].forEach((char, i) => {
+      const span = document.createElement('span');
+      span.className = 'char';
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      span.style.setProperty('--i', i);
+      span.setAttribute('aria-hidden', 'true');
+      el.appendChild(span);
+    });
+  });
+
+  /* ============================
+     2. CHOREOGRAPHED ENTRANCE
+     ============================ */
+  window.addEventListener('DOMContentLoaded', () => {
+    // Small delay for fonts to settle
+    setTimeout(() => document.body.classList.add('loaded'), 150);
+
+    // Deep link support
+    if (location.hash && location.hash !== '#hero') {
+      setTimeout(() => {
+        showPortfolio();
+        jumpToSection(location.hash);
+      }, 600);
+    }
+  });
+
+  /* ============================
+     3. MOUSE PARALLAX ON HERO ORBS
+     ============================ */
+  const hero = document.getElementById('hero');
+  const orbs = document.querySelectorAll('.hero-orb');
+  const speeds = [0.03, 0.02, 0.015];
+
+  hero.addEventListener('mousemove', e => {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx);
+    const dy = (e.clientY - cy);
+    orbs.forEach((orb, i) => {
+      const s = speeds[i] || 0.02;
+      orb.style.transform = orb.classList.contains('orb-3')
+        ? `translate(calc(-50% + ${dx * s}px), calc(-50% + ${dy * s}px))`
+        : `translate(${dx * s}px, ${dy * s}px)`;
+    });
+  });
+
+  /* ============================
+     4. 3D TILT ON HERO IMAGE
+     ============================ */
+  const imgBox = document.getElementById('heroImageBox');
+  const imgFrame = document.getElementById('heroImageFrame');
+  if (imgBox && imgFrame) {
+    imgBox.addEventListener('mousemove', e => {
+      const rect = imgBox.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      imgFrame.style.transform =
+        `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.03)`;
+    });
+    imgBox.addEventListener('mouseleave', () => {
+      imgFrame.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  }
+
+  /* ============================
+     5. SHOW / HIDE PORTFOLIO
+     ============================ */
   const showPortfolio = () => {
     isShowingContent = true;
     document.body.classList.add('show-content');
   };
-
   const hidePortfolio = () => {
     isShowingContent = false;
     document.body.classList.remove('show-content');
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
-
-  // Instant jump — used only for the hero buttons (avoids flash of About before Contact)
-  const jumpToSection = (targetId) => {
-    const target = document.querySelector(targetId);
-    if (!target) return;
-    setTimeout(() => {
-      target.scrollIntoView({ behavior: 'instant', block: 'start' });
-    }, 50);
+  const jumpToSection = id => {
+    const el = document.querySelector(id);
+    if (!el) return;
+    setTimeout(() => el.scrollIntoView({ behavior: 'instant', block: 'start' }), 60);
   };
-
-  // Smooth scroll — used for nav links once content is already visible
-  const smoothToSection = (targetId) => {
-    const target = document.querySelector(targetId);
-    if (!target) return;
-    const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+  const smoothToSection = id => {
+    const el = document.querySelector(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
     window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
   };
 
-  // Reveal — "Dive in"
-  const revealBtn = document.getElementById('revealBtn');
-  if (revealBtn) {
-    revealBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showPortfolio();
-      jumpToSection('#about');
-    });
-  }
+  /* ============================
+     6. BUTTON BINDINGS
+     ============================ */
+  document.getElementById('revealBtn')?.addEventListener('click', e => {
+    e.preventDefault(); showPortfolio(); jumpToSection('#about');
+  });
+  document.getElementById('contactBtn')?.addEventListener('click', e => {
+    e.preventDefault(); showPortfolio(); jumpToSection('#contact');
+  });
+  document.getElementById('heroName')?.addEventListener('click', () => {
+    showPortfolio(); jumpToSection('#about');
+  });
+  document.getElementById('brandReset')?.addEventListener('click', () => hidePortfolio());
 
-  // "Get in touch" — straight to contact, no flicker
-  const contactBtn = document.getElementById('contactBtn');
-  if (contactBtn) {
-    contactBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showPortfolio();
-      jumpToSection('#contact');
-    });
-  }
-
-  // Nav links — smooth scroll if already showing content, instant reveal+jump if on hero
+  // Nav links
   document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');
       if (!href || href === '#' || href === '#hero') return;
       e.preventDefault();
+      // Close mobile nav if open
+      document.getElementById('mainNav')?.classList.remove('open');
+      document.getElementById('navToggle')?.classList.remove('open');
       if (isShowingContent) {
         smoothToSection(href);
       } else {
@@ -570,107 +617,157 @@
     });
   });
 
-  // Hero name click
-  const heroName = document.getElementById('heroName');
-  if (heroName) {
-    heroName.addEventListener('click', () => {
-      showPortfolio();
-      jumpToSection('#about');
-    });
-  }
-
-  // Brand reset
-  document.getElementById('brandReset').addEventListener('click', () => {
-    hidePortfolio();
+  // Mobile nav toggle
+  document.getElementById('navToggle')?.addEventListener('click', () => {
+    document.getElementById('mainNav')?.classList.toggle('open');
+    document.getElementById('navToggle')?.classList.toggle('open');
   });
 
-  // Dynamic Spotlight Glow (Mouse position tracker for cards, tech items, stats & contacts)
-  document.querySelectorAll('.project-card, .stat-item, .contact-card, .tech-item').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-
-  // Magnetic Button Effect on Primary Buttons
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px) scale(1.02)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0px, 0px) scale(1)';
-    });
-  });
-
-  // Fixed Scroll-Back Swipe/Wheel Gestures (Avoids premature collapse bug)
+  /* ============================
+     7. SCROLL-BACK UX FIX
+     ============================ */
   let touchStartY = 0;
-  window.addEventListener('touchstart', e => {
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
+  window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
   window.addEventListener('touchmove', e => {
     if (!isShowingContent) return;
-    // Check if scrolled back to absolute top and swiped downward
-    const swipeDown = e.touches[0].clientY - touchStartY;
-    if (window.scrollY === 0 && swipeDown > 80) {
-      hidePortfolio();
-    }
+    if (window.scrollY === 0 && (e.touches[0].clientY - touchStartY) > 100) hidePortfolio();
   }, { passive: true });
-
   window.addEventListener('wheel', e => {
     if (!isShowingContent) return;
-    // Check if at absolute top and wheel scrolled upward
-    if (window.scrollY === 0 && e.deltaY < -40) {
-      hidePortfolio();
-    }
+    if (window.scrollY === 0 && e.deltaY < -50) hidePortfolio();
   }, { passive: true });
 
-  // ScrollSpy Active Link Indicators
+  /* ============================
+     8. SCROLL PROGRESS BAR
+     ============================ */
+  const progressBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    if (!isShowingContent) return;
+    const scrolled = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+  }, { passive: true });
+
+  /* ============================
+     9. SCROLLSPY ACTIVE NAV
+     ============================ */
   const navLinks = document.querySelectorAll('.nav a');
   const sections = document.querySelectorAll('.section-screen');
-
-  const scrollSpy = new IntersectionObserver((entries) => {
+  const spy = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
+        const id = entry.target.id;
+        navLinks.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
         });
       }
     });
-  }, { threshold: 0.22, rootMargin: '-80px 0px -30% 0px' });
+  }, { threshold: 0.2, rootMargin: '-80px 0px -30% 0px' });
+  sections.forEach(s => spy.observe(s));
 
-  sections.forEach(s => scrollSpy.observe(s));
+  /* ============================
+     10. SECTION REVEAL OBSERVER
+     ============================ */
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('in-view', entry.isIntersecting);
+    });
+  }, { threshold: 0.12 });
+  sections.forEach(s => reveal.observe(s));
 
-  // Section fade-in via IntersectionObserver
-  const io = new IntersectionObserver((entries) => {
+  /* ============================
+     11. ANIMATED COUNTERS
+     ============================ */
+  const countersAnimated = new Set();
+  function animateCounters(container) {
+    container.querySelectorAll('[data-count]').forEach(el => {
+      if (countersAnimated.has(el)) return;
+      countersAnimated.add(el);
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = target > 100 ? 1800 : 1200;
+      const startTime = performance.now();
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out quad
+        const eased = 1 - (1 - progress) * (1 - progress);
+        const current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  // Trigger counters when hero loads
+  setTimeout(() => {
+    animateCounters(document.querySelector('.hero-meta'));
+  }, 2200);
+
+  // Trigger counters for about section on scroll
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) animateCounters(entry.target);
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.about-stats').forEach(s => counterObserver.observe(s));
+
+  /* ============================
+     12. SKILL BAR FILL ON SCROLL
+     ============================ */
+  const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      } else {
-        entry.target.classList.remove('in-view');
+        entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width;
+        });
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-group').forEach(g => skillObserver.observe(g));
 
-  document.querySelectorAll('.section-screen').forEach(s => io.observe(s));
-
-  // Deep link support
-  window.addEventListener('DOMContentLoaded', () => {
-    if (location.hash && location.hash !== '#hero') {
-      showPortfolio();
-      jumpToSection(location.hash);
-    }
+  /* ============================
+     13. CURSOR SPOTLIGHT ON CARDS
+     ============================ */
+  document.querySelectorAll('.project-card, .stat-item, .contact-card, .tech-item, .timeline-content').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
   });
+
+  /* ============================
+     14. MAGNETIC BUTTONS
+     ============================ */
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  /* ============================
+     15. TECH ITEM HOVER COLORS
+     ============================ */
+  document.querySelectorAll('.tech-item[data-color]').forEach(item => {
+    const color = item.dataset.color;
+    item.addEventListener('mouseenter', () => {
+      item.style.setProperty('--tech-accent', color);
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.removeProperty('--tech-accent');
+    });
+  });
+
+})();
 </script>
 
 </body>
