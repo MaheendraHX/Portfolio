@@ -282,52 +282,106 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- SKILLS & TECH STACK -->
     <section id="skills" class="section-screen">
       <div class="section-inner">
-        <div class="section-label">04 — Skills</div>
+        <div class="section-label">04 — Skills & Toolkit</div>
         <h2 class="section-title">My toolkit,<br><em>so far.</em></h2>
         <div class="skills-layout">
-          <div class="skill-group">
-            <p class="skill-group-label">Core</p>
-            <div class="skill-cards">
-              <div class="skill-card">
-                <div class="skill-icon">⬡</div>
-                <span>HTML</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          
+          <!-- Column 1: Core Fundamentals & Concept Focus -->
+          <div class="skills-left">
+            <div class="skill-group">
+              <p class="skill-group-label">Core Fundamentals</p>
+              <div class="skill-cards">
+                <div class="skill-card">
+                  <div class="skill-icon">⬡</div>
+                  <span>HTML</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">✦</div>
+                  <span>CSS</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">◈</div>
+                  <span>JavaScript</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+                </div>
               </div>
-              <div class="skill-card">
-                <div class="skill-icon">✦</div>
-                <span>CSS</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">◈</div>
-                <span>JavaScript</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+            </div>
+            
+            <div class="skill-group" style="margin-top: 32px;">
+              <p class="skill-group-label">Focus & Craft</p>
+              <div class="skill-cards">
+                <div class="skill-card">
+                  <div class="skill-icon">◉</div>
+                  <span>Web Design</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">◌</div>
+                  <span>Animations</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">▦</div>
+                  <span>Responsive</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="skill-group">
-            <p class="skill-group-label">Craft</p>
-            <div class="skill-cards">
-              <div class="skill-card">
-                <div class="skill-icon">◉</div>
-                <span>Web Design</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          
+          <!-- Column 2: Tech Stack Grid -->
+          <div class="skills-right">
+            <p class="skill-group-label">Technologies & Tools</p>
+            <div class="tech-grid">
+              
+              <div class="tech-item">
+                <span class="tech-icon">⚛</span>
+                <span class="tech-name">React</span>
               </div>
-              <div class="skill-card">
-                <div class="skill-icon">◌</div>
-                <span>Animations</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">▲</span>
+                <span class="tech-name">Next.js</span>
               </div>
-              <div class="skill-card">
-                <div class="skill-icon">▦</div>
-                <span>Responsive</span>
-                <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">🍃</span>
+                <span class="tech-name">Tailwind</span>
               </div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">⬢</span>
+                <span class="tech-name">Node.js</span>
+              </div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">🗲</span>
+                <span class="tech-name">Vite</span>
+              </div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">⌥</span>
+                <span class="tech-name">Git</span>
+              </div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">🐍</span>
+                <span class="tech-name">Python</span>
+              </div>
+              
+              <div class="tech-item">
+                <span class="tech-icon">⛃</span>
+                <span class="tech-name">SQL</span>
+              </div>
+              
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -530,8 +584,8 @@
     hidePortfolio();
   });
 
-  // Dynamic Spotlight Glow (Mouse position tracker for cards & stats)
-  document.querySelectorAll('.project-card, .stat-item, .contact-card').forEach(card => {
+  // Dynamic Spotlight Glow (Mouse position tracker for cards, tech items, stats & contacts)
+  document.querySelectorAll('.project-card, .stat-item, .contact-card, .tech-item').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
