@@ -9,22 +9,23 @@
 <!-- Favicon: gold M -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f1c17'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23d4af37'>M</text></svg>">
 
-<!-- Open Graph / link previews -->
+<!-- Open Graph / link previews (Fixed path to Portfolio repo) -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://maheendrahx.github.io/Myprofile/" />
+<meta property="og:url" content="https://maheendrahx.github.io/Portfolio/" />
 <meta property="og:title" content="Maheendra Menon — Designer & Developer" />
 <meta property="og:description" content="Frontend developer crafting fluid, animated web experiences from Kerala. Obsessed with motion, design systems, and premium UI." />
-<meta property="og:image" content="https://maheendrahx.github.io/Myprofile/me.jpeg" />
+<meta property="og:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg" />
 
-<!-- Twitter card -->
+<!-- Twitter card (Fixed path to Portfolio repo) -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Maheendra Menon — Designer & Developer" />
 <meta name="twitter:description" content="Frontend developer crafting fluid, animated web experiences from Kerala." />
-<meta name="twitter:image" content="https://maheendrahx.github.io/Myprofile/me.jpeg" />
+<meta name="twitter:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- Added Playfair Display (Serif Italic) for high-end contrast -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -125,8 +126,6 @@
       </div>
     </div>
 
-
-
   </section>
 
   <!-- MAIN CONTENT -->
@@ -224,24 +223,19 @@
             </div>
           </article>
 
-       <article class="project-card">
-  <div class="project-card-top">
-    <div class="project-icon proj-logo-wrap aria-logo-wrap">
-      <!-- ARIA logo image -->
-      <img src="aria-logo.png" alt="ARIA System" class="proj-logo aria-logo">
-    </div>
-    <div class="project-status coming-soon">Coming soon</div>
-  </div>
-
-  <h3>ARIA System</h3>
- <p>
-  ARIA is a Forest Luxe personal AI OS I built for my own workflow — combining live web search, voice-first interaction, and fine-grained PC control. Visitors get a safe demo version in the browser that mimics the experience without accessing my actual machine.
-</p>
-
-  <div class="project-links project-links-split">
-    <span class="proj-link personal-pill">Personal project</span>
-  </div>
-</article>
+          <article class="project-card aria-card">
+            <div class="project-card-top">
+              <div class="project-icon proj-logo-wrap aria-logo-wrap">
+                <img src="aria-logo.png" alt="ARIA System" class="proj-logo aria-logo">
+              </div>
+              <div class="project-status coming-soon">Coming soon</div>
+            </div>
+            <h3>ARIA System</h3>
+            <p>ARIA is a Forest Luxe personal AI OS I built for my own workflow — combining live web search, voice-first interaction, and fine-grained PC control. Visitors get a safe demo version in the browser that mimics the experience without accessing my actual machine.</p>
+            <div class="project-links project-links-split">
+              <span class="proj-link personal-pill">Personal project</span>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -458,7 +452,6 @@
 
 <script>
   let isShowingContent = false;
-  let scrollResetTimeout = null;
 
   const showPortfolio = () => {
     isShowingContent = true;
@@ -537,13 +530,72 @@
     hidePortfolio();
   });
 
-  // Scroll to top = return to hero
-  window.addEventListener('scroll', () => {
+  // Dynamic Spotlight Glow (Mouse position tracker for cards & stats)
+  document.querySelectorAll('.project-card, .stat-item, .contact-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // Magnetic Button Effect on Primary Buttons
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px) scale(1.02)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0px, 0px) scale(1)';
+    });
+  });
+
+  // Fixed Scroll-Back Swipe/Wheel Gestures (Avoids premature collapse bug)
+  let touchStartY = 0;
+  window.addEventListener('touchstart', e => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  window.addEventListener('touchmove', e => {
     if (!isShowingContent) return;
-    if (window.scrollY === 0) {
+    // Check if scrolled back to absolute top and swiped downward
+    const swipeDown = e.touches[0].clientY - touchStartY;
+    if (window.scrollY === 0 && swipeDown > 80) {
       hidePortfolio();
     }
   }, { passive: true });
+
+  window.addEventListener('wheel', e => {
+    if (!isShowingContent) return;
+    // Check if at absolute top and wheel scrolled upward
+    if (window.scrollY === 0 && e.deltaY < -40) {
+      hidePortfolio();
+    }
+  }, { passive: true });
+
+  // ScrollSpy Active Link Indicators
+  const navLinks = document.querySelectorAll('.nav a');
+  const sections = document.querySelectorAll('.section-screen');
+
+  const scrollSpy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.22, rootMargin: '-80px 0px -30% 0px' });
+
+  sections.forEach(s => scrollSpy.observe(s));
 
   // Section fade-in via IntersectionObserver
   const io = new IntersectionObserver((entries) => {
