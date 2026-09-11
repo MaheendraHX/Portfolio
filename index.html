@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Maheendra Menon is a student designer and frontend developer from Kerala building thoughtful, interactive web experiences." />
 <meta name="author" content="Maheendra Menon" />
-<meta name="theme-color" content="#0f1c17" />
+<meta name="theme-color" content="#0f0f12" />
 <link rel="canonical" href="https://maheendrahx.github.io/Portfolio/" />
 <title>Maheendra Menon — UI/UX & Frontend Developer</title>
 
 <!-- Favicon: gold M -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f1c17'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23d4af37'>M</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f12'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23d4af37'>M</text></svg>">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -34,6 +34,14 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Ambient background: decorative only, kept separate from page content. -->
+<div id="bg-canvas" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-orb bg-orb-bronze"></div>
+  <div class="bg-orb bg-orb-indigo"></div>
+  <div class="bg-spotlight"></div>
+</div>
 
 <!-- Scroll Progress Bar -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -67,10 +75,6 @@
 
   <!-- ==================== HERO ==================== -->
   <section id="hero" class="hero">
-
-    <div class="hero-orb orb-1" aria-hidden="true"></div>
-    <div class="hero-orb orb-2" aria-hidden="true"></div>
-    <div class="hero-orb orb-3" aria-hidden="true"></div>
 
     <div class="hero-chip chip-1" aria-hidden="true">
       <span class="chip-dot"></span> B.Tech · TocH
@@ -707,25 +711,22 @@
   });
 
   /* ============================
-     3. MOUSE PARALLAX ON HERO ORBS
+     3. BACKGROUND SPOTLIGHT
      ============================ */
-  const hero = document.getElementById('hero');
-  const orbs = document.querySelectorAll('.hero-orb');
-  const speeds = [0.03, 0.02, 0.015];
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const bgCanvas = document.getElementById('bg-canvas');
+  let spotlightFrame;
 
-  hero.addEventListener('mousemove', e => {
-    if (prefersReducedMotion) return;
-    const cx = window.innerWidth / 2;
-    const cy = window.innerHeight / 2;
-    const dx = (e.clientX - cx);
-    const dy = (e.clientY - cy);
-    orbs.forEach((orb, i) => {
-      const s = speeds[i] || 0.02;
-      orb.style.transform = orb.classList.contains('orb-3')
-        ? `translate(calc(-50% + ${dx * s}px), calc(-50% + ${dy * s}px))`
-        : `translate(${dx * s}px, ${dy * s}px)`;
-    });
-  });
+  if (bgCanvas && finePointer.matches && !prefersReducedMotion) {
+    window.addEventListener('pointermove', e => {
+      if (spotlightFrame) return;
+      spotlightFrame = window.requestAnimationFrame(() => {
+        bgCanvas.style.setProperty('--spotlight-x', `${(e.clientX / window.innerWidth) * 100}%`);
+        bgCanvas.style.setProperty('--spotlight-y', `${(e.clientY / window.innerHeight) * 100}%`);
+        spotlightFrame = undefined;
+      });
+    }, { passive: true });
+  }
 
   /* ============================
      4. 3D TILT ON HERO IMAGE
