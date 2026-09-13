@@ -1734,23 +1734,23 @@ body > main,
 .bg-orb-bronze {
   top: -20%;
   left: -18%;
-  opacity: 0.2;
-  background: radial-gradient(circle, rgba(175, 106, 48, 0.27), transparent 67%);
+  opacity: 0.38;
+  background: radial-gradient(circle, rgba(175, 106, 48, 0.42), transparent 67%);
   animation: ambientBronze 34s ease-in-out infinite alternate;
 }
 
 .bg-orb-indigo {
   right: -22%;
   bottom: -16%;
-  opacity: 0.17;
-  background: radial-gradient(circle, rgba(196, 148, 74, 0.25), transparent 68%);
+  opacity: 0.28;
+  background: radial-gradient(circle, rgba(196, 148, 74, 0.34), transparent 68%);
   animation: ambientIndigo 42s ease-in-out infinite alternate;
 }
 
 .bg-spotlight {
   background: radial-gradient(
     620px circle at var(--spotlight-x) var(--spotlight-y),
-    rgba(236, 214, 160, 0.055),
+    rgba(236, 214, 160, 0.11),
     transparent 68%
   );
   opacity: 0.85;
