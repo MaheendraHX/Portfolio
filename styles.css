@@ -1041,6 +1041,11 @@ body.show-content .main-content {
   color: #4ade80;
   border: 1px solid rgba(52,199,89,0.25);
 }
+.project-status.rebuilding {
+  background: rgba(212, 175, 55, 0.12);
+  color: #f0dca2;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+}
 .project-status.coming-soon {
   background: rgba(212, 175, 55, 0.12);
   color: #f0dca2;
