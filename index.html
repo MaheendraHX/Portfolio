@@ -1,1013 +1,170 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-  <meta name="google-site-verification" content="jQK6DdbQk2UO929-rEQ7xJWrWq8zEgb6tt9rxSilEIE" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Maheendra Menon is a student designer and frontend developer from Kerala building thoughtful, interactive web experiences." />
-<meta name="author" content="Maheendra Menon" />
-<meta name="description" content="Maheendra Menon is a student designer and frontend developer from Kerala building thoughtful, interactive web experiences." />
-<meta name="author" content="Maheendra Menon" />
-<meta name="theme-color" content="#0f0f12" />
-
-<link rel="canonical" href="https://maheendrahx.github.io/Portfolio/" />
-
-<title>Maheendra Menon — UI/UX & Frontend Developer</title>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Maheendra Menon",
-  "url": "https://maheendrahx.github.io/Portfolio/",
-  "jobTitle": "Computer Science Student & Developer",
-  "sameAs": [
-    "https://github.com/MaheendraHX",
-    "https://www.linkedin.com/in/maheendramenon",
-    "https://www.instagram.com/x_tr_em_er/"
-  ]
-}
-</script>
-
-<!-- Favicon: gold M -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f0f12'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23d4af37'>M</text></svg>">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://maheendrahx.github.io/Portfolio/" />
-<meta property="og:site_name" content="Maheendra Menon — Portfolio" />
-<meta property="og:title" content="Maheendra Menon — UI/UX & Frontend Developer" />
-<meta property="og:description" content="A student designer and frontend developer building thoughtful, interactive web experiences from Kerala." />
-<meta property="og:locale" content="en_IN" />
-<meta property="og:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg" />
-
-<!-- Twitter card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Maheendra Menon — UI/UX & Frontend Developer" />
-<meta name="twitter:description" content="A student designer and frontend developer building thoughtful, interactive web experiences from Kerala." />
-<meta name="twitter:creator" content="@x_tr_em_er" />
-<meta name="twitter:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e5dc">
+  <meta name="description" content="Maheendra Menon's corner of the internet: a collection of software, interfaces, and experiments built in Kerala.">
+  <meta name="author" content="Maheendra Menon">
+  <link rel="canonical" href="https://maheendrahx.github.io/Portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maheendrahx.github.io/Portfolio/">
+  <meta property="og:title" content="Maheendra Menon — things I made">
+  <meta property="og:description" content="A collection of software, interfaces, and experiments by Maheendra Menon.">
+  <meta property="og:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg">
+  <title>Maheendra Menon — things I made</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="intro-open">
+  <a class="skip-link" href="#work">Skip to the work</a>
+  <div class="page-grain" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span id="scrollMeter"></span></div>
 
-<!-- Ambient background: decorative only, kept separate from page content. -->
-<div id="bg-canvas" aria-hidden="true">
-  <div class="bg-grid"></div>
-  <div class="bg-orb bg-orb-bronze"></div>
-  <div class="bg-orb bg-orb-indigo"></div>
-  <div class="bg-spotlight"></div>
-</div>
-
-<!-- Scroll Progress Bar -->
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-<header class="site-header">
-  <div class="header-inner">
-    <button class="brand" id="brandReset" type="button" aria-label="Return to the introduction">
-      <div class="avatar-small">MM</div>
-      <div class="brand-text">
-        <span class="name">Maheendra Menon</span>
-        <span class="role">UI/UX + Frontend</span>
-      </div>
-    </button>
-    <nav class="nav" id="mainNav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Journey</a>
-      <a href="#skills">Skills</a>
-      <a href="#languages">Languages</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#contact">Contact</a>
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#home" aria-label="Maheendra Menon, home"><span class="wordmark-mark">M<span>.</span></span><span class="wordmark-name">MAHEENDRA MENON<br><small>PERSONAL SITE / KERALA</small></span></a>
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link is-current">HOME</a>
+      <a href="#work" class="nav-link">WORK</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#certificates" class="nav-link">CERTIFICATES</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
     </nav>
-    <!-- Mobile hamburger -->
-    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false"><span></span><span></span></button>
+  </header>
 
-<main>
+  <main>
+    <section class="intro" id="home" aria-labelledby="hero-title">
+      <div class="intro-topline mono"><span>INDEPENDENTLY MADE / SOMEWHERE BETWEEN CLASSES</span><span>KERALA, INDIA</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> CSE STUDENT · DEVELOPER · KERALA, INDIA</p>
+          <h1 id="hero-title" class="hero-title" aria-label="Maheendra Menon"><span class="hero-line" data-split>MAHEENDRA</span><span class="hero-line hero-line-second"><span data-split>MENON</span><span class="hero-period">.</span></span></h1>
+          <div class="hero-bottomline">
+            <p class="hero-statement">I make things because<br>I want to see if I can.</p>
+            <div class="hero-actions">
+              <a class="enter-link" id="enterWork" href="#work"><span>COME HAVE A LOOK</span><span class="arrow-down" aria-hidden="true">↘</span></a>
+              <a class="quiet-link" href="#contact">OR SAY HELLO <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="A note about this site">
+          <span class="aside-index mono">FIELD NOTES&nbsp; № 01</span>
+          <span class="aside-rule" aria-hidden="true"></span>
+          <p>A personal collection of software, interfaces, and ideas that escaped the notes app.</p>
+          <span class="aside-foot mono">NO PARTICULAR ORDER. STILL IN PROGRESS.</span>
+        </aside>
+      </div>
+      <div class="intro-bottom mono"><span>SCROLL OR USE THE INDEX</span><span>PORTFOLIO / 2026</span></div>
+      <span class="hero-side-note mono" aria-hidden="true">THOUGHT, THEN CODE</span>
+    </section>
 
-  <!-- ==================== HERO ==================== -->
-  <section id="hero" class="hero">
+    <div class="archive" id="archive">
 
-    <div class="hero-chip chip-1" aria-hidden="true">
-      <span class="chip-dot"></span> B.Tech · TocH
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="section-rail"><span class="section-number mono">01 / THE WORK</span><span class="section-tick" aria-hidden="true"></span></div>
+        <div class="work-content">
+          <div class="section-heading-row" data-reveal>
+            <div><p class="eyebrow">A SMALL, GROWING ARCHIVE</p><h2 id="work-title" class="section-heading">Made to find out.</h2></div>
+            <p class="heading-note">Four projects. Four different rabbit holes.<br>No claim that any of them are finished.</p>
+          </div>
+
+          <article class="project project-mavis" data-reveal>
+            <div class="project-visual mavis-visual" aria-label="Mavis project mark">
+              <span class="visual-index mono">01 — ASSISTANT / IN PROGRESS</span>
+              <img src="https://maheendrahx.github.io/Portfolio/mavis-logo.svg" alt="Mavis mark" loading="lazy">
+              <span class="visual-caption mono">A PERSONAL BUILD, BEING REBUILT</span>
+            </div>
+            <div class="project-copy">
+              <div class="project-kicker mono"><span>01</span><span>AI PRODUCT UI</span><span>BEING REBUILT</span></div>
+              <h3>Mavis<span class="project-period">.</span></h3>
+              <p class="project-deck">A personal AI assistant with web search, file attachments, and private PC controls. Warm, practical, and currently back on the workbench.</p>
+              <div class="project-foot"><span class="project-stack">React <i>·</i> FastAPI <i>·</i> Python</span><a class="text-link" href="#contact">Ask me about it <span aria-hidden="true">↘</span></a></div>
+            </div>
+          </article>
+
+          <article class="project project-kevin" data-reveal>
+            <div class="project-copy">
+              <div class="project-kicker mono"><span>02</span><span>AI-ASSISTED BUILD</span><span>LIVE</span></div>
+              <h3>Kevin<span class="project-period">.</span></h3>
+              <p class="project-deck">An AI-assisted study workspace built with Manus AI: a way to turn notes and readings into structured subjects, cited answers, recall cards, and practice quizzes.</p>
+              <div class="project-foot"><span class="project-stack">Manus AI <i>·</i> AI-assisted development</span><span class="project-links"><a class="text-link" href="https://maheendrahx.github.io/Kevin/" target="_blank" rel="noopener noreferrer">Open the project <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/MaheendraHX/Kevin" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></span></div>
+            </div>
+            <div class="project-visual kevin-visual" aria-hidden="true"><span class="kevin-letter">K</span><span class="kevin-annotation mono">NOTES IN<br>NOTES OUT<br>BETTER QUESTIONS?</span><span class="kevin-index mono">STUDY / 02</span></div>
+          </article>
+
+          <article class="project project-gesture" data-reveal>
+            <div class="project-visual gesture-visual">
+              <span class="visual-index mono">03 — COMPUTER VISION / LIVE</span>
+              <img src="https://maheendrahx.github.io/Portfolio/gesture-math-logo.png" alt="Gesture Math project mark" loading="lazy">
+              <span class="gesture-scribble" aria-hidden="true">hands, meet numbers</span>
+              <span class="visual-caption mono">INPUT: HANDS &nbsp; / &nbsp; OUTPUT: AN ANSWER</span>
+            </div>
+            <div class="project-copy">
+              <div class="project-kicker mono"><span>03</span><span>COMPUTER VISION</span><span>LIVE</span></div>
+              <h3>Gesture Math<span class="project-period">.</span></h3>
+              <p class="project-deck">What if you could solve equations with your hands? A small math game that makes gestures the input and quick feedback the point.</p>
+              <div class="project-foot"><span class="project-stack">JavaScript <i>·</i> CSS <i>·</i> HTML</span><span class="project-links"><a class="text-link" href="https://maheendrahx.github.io/Gesture-Math/" target="_blank" rel="noopener noreferrer">Try it <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/MaheendraHX/Math-game" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></span></div>
+            </div>
+          </article>
+
+          <article class="project project-disaster" data-reveal>
+            <div class="disaster-art"><span class="disaster-number" aria-hidden="true">04</span><img src="https://maheendrahx.github.io/Portfolio/disaster-alert-app-logo.png" alt="Disaster Alert project mark" loading="lazy"><span class="disaster-caption mono">STAY LEGIBLE<br>UNDER PRESSURE.</span></div>
+            <div class="project-copy">
+              <div class="project-kicker mono"><span>04</span><span>SAFETY UX</span><span>LIVE</span></div>
+              <h3>Disaster Alert<span class="project-period">.</span></h3>
+              <p class="project-deck">A high-stakes alert interface for local hazards, with SOS actions and safety information designed to stay clear when it matters.</p>
+              <div class="project-foot"><span class="project-stack">HTML <i>·</i> CSS <i>·</i> JavaScript</span><span class="project-links"><a class="text-link" href="https://maheendrahx.github.io/Disaster-Alert-System/" target="_blank" rel="noopener noreferrer">See the project <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/MaheendraHX/Disaster-Alert-System" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></span></div>
+            </div>
+          </article>
+          <p class="project-endnote mono" data-reveal>THAT’S WHAT’S OUT HERE FOR NOW. &nbsp; MORE WHEN THERE’S MORE.</p>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title" data-reveal>
+        <div class="section-rail"><span class="section-number mono">02 / A NOTE</span><span class="section-tick" aria-hidden="true"></span></div>
+        <div class="about-content">
+          <p class="eyebrow">A LITTLE CONTEXT</p>
+          <h2 id="about-title" class="about-heading">Still learning.<br><span>Usually by building.</span></h2>
+          <div class="about-body">
+            <p>I’m Maheendra, a CSE student in Kerala. I like getting curious about software, interfaces, AI, and computer vision — then following a random idea far enough to make a project out of it.</p>
+            <p>Some things work on the first try. Most things teach me something. This site is where I keep them.</p>
+          </div>
+          <p class="about-colophon mono">CURRENTLY STUDYING AT TOCH INSTITUTE OF SCIENCE AND TECHNOLOGY</p>
+        </div>
+      </section>
+
+      <section class="section certificates-section" id="certificates" aria-labelledby="certificates-title" data-reveal>
+        <div class="section-rail"><span class="section-number mono">03 / THE PAPER TRAIL</span><span class="section-tick" aria-hidden="true"></span></div>
+        <div class="certificates-content">
+          <p class="eyebrow">COURSES, WORKSHOPS & OTHER RECEIPTS</p>
+          <div class="cert-heading-row"><h2 id="certificates-title" class="section-heading">Things I’ve<br>learned along the way.</h2><p class="heading-note">An archive, not a leaderboard.<br>Open an entry to see the document.</p></div>
+          <div class="certificate-list">
+            <details class="certificate-entry"><summary><span class="certificate-no mono">01</span><span class="certificate-name">Software Engineering 101</span><span class="certificate-issuer">ADVAY Workshops · IEEE Computer Society TocH &amp; Core.ai</span><span class="certificate-date mono">FEB 13, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-advay26.jpg" alt="Software Engineering 101 certificate" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-advay26.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">02</span><span class="certificate-name">AI Industry Internship</span><span class="certificate-issuer">Lifosys Digital Systems &amp; Aiilab</span><span class="certificate-date mono">JUN 3 – JUL 3, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-lifosys-aiilab.jpg" alt="AI Industry Internship certificate" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-lifosys-aiilab.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">03</span><span class="certificate-name">Wireless Robotic Car</span><span class="certificate-issuer">TATHVA ’25 · NIT Calicut</span><span class="certificate-date mono">OCT 24–26, 2025</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-tathva25.jpg" alt="Wireless Robotic Car workshop certificate" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-tathva25.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">04</span><span class="certificate-name">HACKLAB.exe: Cyber Security</span><span class="certificate-issuer">TECHFOSS 2026 · Toc H Dept. of CSE / IEEE-CS</span><span class="certificate-date mono">FEB 27, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-techfoss26.jpg" alt="HACKLAB.exe Cyber Security Workshop certificate" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-techfoss26.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">05</span><span class="certificate-name">Cyber Verse: Blue Teaming</span><span class="certificate-issuer">IEEE Computer Society Kerala Chapter</span><span class="certificate-date mono">JUN 26, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-cyberverse.jpg" alt="Cyber Verse Blue Teaming certificate" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-cyberverse.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">06</span><span class="certificate-name">Digital Edge 101</span><span class="certificate-issuer">IT-ITeS Sector Skills Council, Nasscom</span><span class="certificate-date mono">MAR 14, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-digital-edge-101.jpg" alt="Digital Edge 101 certificate of completion" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-digital-edge-101.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">07</span><span class="certificate-name">Digital Edge 101 — Gold</span><span class="certificate-issuer">FutureSkills Prime · NASSCOM IT-ITeS SSC</span><span class="certificate-date mono">JUL 2, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-futureskills-digital-edge-101-gold.jpg" alt="Digital Edge 101 Gold certificate" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-futureskills-digital-edge-101-gold.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">08</span><span class="certificate-name">AI Capabilities and Limitations</span><span class="certificate-issuer">Claude Academy</span><span class="certificate-date mono">AUG 26, 2026</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-claude-academy-ai-capabilities-limitations.png" alt="AI Capabilities and Limitations course completion badge" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-claude-academy-ai-capabilities-limitations.png" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+            <details class="certificate-entry"><summary><span class="certificate-no mono">09</span><span class="certificate-name">AI Fluency: Framework &amp; Foundations</span><span class="certificate-issuer">Anthropic</span><span class="certificate-date mono">DATE NOT SPECIFIED</span><span class="certificate-open" aria-hidden="true">↗</span></summary><div class="certificate-preview"><img src="https://maheendrahx.github.io/Portfolio/cert-anthropic-ai-fluency.jpg" alt="AI Fluency: Framework and Foundations certificate of completion" loading="lazy"><a href="https://maheendrahx.github.io/Portfolio/cert-anthropic-ai-fluency.jpg" target="_blank" rel="noopener noreferrer">Open full certificate ↗</a></div></details>
+          </div>
+          <p class="certificate-note mono">NINE DOCUMENTS, KEPT IN THEIR ORIGINAL FORM.</p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title" data-reveal>
+        <div class="contact-top mono"><span>04 / THE OPEN TAB</span><span>YOU MADE IT TO THE END.</span></div>
+        <div class="contact-main"><p class="eyebrow">THAT’S THE SHORT VERSION</p><h2 id="contact-title">Got an idea?<br><em>Let’s see where it goes.</em></h2><p class="contact-copy">I’m open to internships, freelance work, and thoughtful collaborations. If you’ve got something interesting on your mind, I’m easy to find.</p><a class="contact-email" href="mailto:maheendramenon@gmail.com">maheendramenon@gmail.com <span aria-hidden="true">↗</span></a></div>
+        <div class="contact-bottom"><a href="tel:+919746945370">+91 97469 45370</a><div class="social-links"><a href="https://github.com/MaheendraHX" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="https://www.linkedin.com/in/maheendramenon" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href="https://www.instagram.com/x_tr_em_er/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></div><a href="#top" class="back-top">BACK TO TOP ↑</a></div>
+      </section>
+      <footer class="site-footer mono"><span>MADE BY MAHEENDRA, IN KERALA.</span><span>PERSONAL SITE / 2026</span></footer>
     </div>
-    <div class="hero-chip chip-2" aria-hidden="true">
-      <span class="chip-dot"></span> Kerala, India
-    </div>
-    <div class="hero-chip chip-3" aria-hidden="true">
-      <span class="chip-dot dot-green"></span> Open to work
-    </div>
-
-    <div class="hero-panel">
-      <div class="hero-content-wrapper">
-        <div class="hero-card">
-
-          <div class="hero-badge">
-            <span class="badge-pulse"></span>
-            UI/UX + Frontend
-          </div>
-
-          <h1 class="hero-name" id="heroName">
-            <span class="name-line" data-split>Maheendra</span>
-            <span class="name-line name-accent" data-split>Menon.</span>
-          </h1>
-
-          <p class="hero-subtitle">I design and build interactive web experiences where <em>visual systems</em>, <em>motion</em>, and frontend craft work together.</p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#about" id="revealBtn">
-              Dive in
-              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="btn btn-ghost" href="#contact" id="contactBtn">Get in touch</a>
-          </div>
-
-          <div class="hero-meta">
-            <div class="hero-meta-item">
-              <span class="meta-num" data-count="5" data-suffix="">0</span>
-              <span class="meta-lbl">Projects shipped</span>
-            </div>
-            <div class="hero-meta-sep"></div>
-            <div class="hero-meta-item">
-              <span class="meta-num" data-count="3">0</span>
-              <span class="meta-lbl">Languages</span>
-            </div>
-            <div class="hero-meta-sep"></div>
-            <div class="hero-meta-item">
-              <span class="meta-num">2nd</span>
-              <span class="meta-lbl">Year B.Tech</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hero-image-box" id="heroImageBox">
-          <div class="hero-image-frame" id="heroImageFrame">
-            <img src="id-photo.jpeg" alt="Maheendra Menon" class="hero-avatar" onerror="this.parentNode.classList.add('fallback-active')">
-            <div class="avatar-fallback-glow"></div>
-          </div>
-          <div class="hero-image-ring" aria-hidden="true"></div>
-          <div class="hero-image-tag" aria-hidden="true">
-            <span>✦</span> UI · Motion · Code
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-  </section>
-
-  <!-- ==================== MAIN CONTENT ==================== -->
-  <div class="main-content" id="mainContent">
-
-    <!-- ABOUT -->
-    <section id="about" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">01 — About</div>
-        <h2 class="section-title">The person<br><em>behind the code.</em></h2>
-        <div class="about-layout">
-          <div class="about-bio">
-            <p>I'm a second-year Computer Science student from Ernakulam, Kerala, exploring the space between UI/UX design and frontend development at TocH Institute of Science and Technology.</p>
-            <p>I like turning ideas into working interfaces — paying attention to hierarchy, motion, and the small details that make an experience easier to understand. I'm still learning, but I learn by building.</p>
-          </div>
-          <div class="about-right">
-            <div class="about-stats">
-              <div class="stat-item">
-                <span class="stat-val" data-count="5" data-suffix="">0</span>
-                <span class="stat-lbl">Projects shipped</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-val" data-count="2025">0</span>
-                <span class="stat-lbl">Started coding</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-val" data-count="2029">0</span>
-                <span class="stat-lbl">B.Tech graduation</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-val" data-count="3">0</span>
-                <span class="stat-lbl">Languages spoken</span>
-              </div>
-            </div>
-            <div class="about-tag-row">
-              <span class="tag">Frontend Development</span>
-              <span class="tag">UI/UX Design</span>
-              <span class="tag">Interactive Web</span>
-              <span class="tag">Motion &amp; Animation</span>
-              <span class="tag">Creative Frontend</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">02 — Projects</div>
-        <h2 class="section-title">Things I've<br><em>actually shipped.</em></h2>
-        <p class="section-intro">Selected builds across product UI, interactive frontend, computer vision, and source-grounded AI.</p>
-        <div class="project-grid">
-
-          <article class="project-card">
-            <div class="project-card-top">
-              <div class="project-icon apex-logo-wrap">
-                <img src="apex-prime-logo.webp" alt="Apex Prime project mark" class="apex-logo" loading="lazy">
-              </div>
-              <div class="project-status live">Live</div>
-            </div>
-            <h3>Apex Prime</h3>
-            <div class="project-category">Product UI</div>
-            <p>A polished automotive discovery hub that makes moving from brand exploration to official manufacturer sites feel clear and effortless.</p>
-            <div class="project-stack">HTML · CSS · JavaScript</div>
-            <div class="project-links">
-              <a href="https://maheendrahx.github.io/Apex-Prime/" target="_blank" rel="noopener noreferrer" class="proj-link" title="View Live Site">
-                View project <span class="link-arrow">↗</span>
-              </a>
-              <a href="https://github.com/MaheendraHX/Apex-Prime" target="_blank" rel="noopener noreferrer" class="proj-link secondary" title="View on GitHub">
-                GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.54-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-card-top">
-              <div class="project-icon proj-logo-wrap gesture-logo-wrap">
-                <img src="gesture-math-logo.png" alt="Gesture Math project mark" class="proj-logo" loading="lazy">
-              </div>
-              <div class="project-status live">Live</div>
-            </div>
-            <h3>Gesture Math</h3>
-            <div class="project-category">Computer Vision</div>
-            <p>A playful computer-vision math game where hand gestures become the input, designed for quick feedback and low-friction interaction.</p>
-            <div class="project-stack">JavaScript · CSS · HTML</div>
-            <div class="project-links">
-              <a href="https://maheendrahx.github.io/Gesture-Math/" target="_blank" rel="noopener noreferrer" class="proj-link" title="View Live Site">
-                View project <span class="link-arrow">↗</span>
-              </a>
-              <a href="https://github.com/MaheendraHX/Math-game" target="_blank" rel="noopener noreferrer" class="proj-link secondary" title="View on GitHub">
-                GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.54-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-card-top">
-              <div class="project-icon proj-logo-wrap disaster-logo-wrap">
-                <img src="disaster-alert-app-logo.png" alt="Disaster Alert project mark" class="proj-logo" loading="lazy">
-              </div>
-              <div class="project-status live">Live</div>
-            </div>
-            <h3>Disaster Alert</h3>
-            <div class="project-category">Safety UX</div>
-            <p>A high-stakes alert interface for localized hazards, with SOS actions and safety information designed to stay legible under pressure.</p>
-            <div class="project-stack">HTML · CSS · JavaScript</div>
-            <div class="project-links">
-              <a href="https://maheendrahx.github.io/Disaster-Alert-System/" target="_blank" rel="noopener noreferrer" class="proj-link" title="View Live Site">
-                View project <span class="link-arrow">↗</span>
-              </a>
-              <a href="https://github.com/MaheendraHX/Disaster-Alert-System" target="_blank" rel="noopener noreferrer" class="proj-link secondary" title="View on GitHub">
-                GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.54-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              </a>
-            </div>
-          </article>
-
-        <article class="project-card aria-card">
-  <div class="project-card-top">
-    <div class="project-icon proj-logo-wrap aria-logo-wrap">
-      <img
-        src="mavis-logo.svg"
-        alt="Mavis project mark"
-        class="proj-logo aria-logo"
-        loading="lazy"
-      />
-    </div>
-
-    <div class="project-status rebuilding">Being rebuilt</div>
-  </div>
-
-  <h3>Mavis</h3>
-
-  <div class="project-category">AI Product UI</div>
-
-  <p>
-    A personal AI assistant with web search, file attachments, and private PC
-    controls—designed as a warm, practical interface across a full-stack build.
-  </p>
-
-  <div class="project-stack">React · FastAPI · Python</div>
-
-  <p class="project-note">
-    Mavis is temporarily offline while I rebuild and refine the next version of
-    the assistant.
-  </p>
-
-  <div class="project-links">
-    <a href="#contact" class="proj-link" title="Ask about Mavis">
-      Ask about Mavis <span class="link-arrow">↓</span>
-    </a>
-  </div>
-</article>
-
-
-          <article class="project-card kevin-card">
-            <div class="project-card-top">
-              <div class="project-icon proj-logo-wrap kevin-logo-wrap" role="img" aria-label="Kevin logo">K</div>
-              <div class="project-status live">Live</div>
-            </div>
-            <h3>Kevin</h3>
-            <div class="project-category">AI-Assisted Build</div>
-            <p>An AI-assisted study workspace created with Manus AI, exploring how personal notes and readings can be turned into structured subjects, cited answers, recall cards, and practice quizzes.</p>
-            <div class="project-stack">Manus AI · AI-assisted development</div>
-            <div class="project-links">
-              <a href="https://maheendrahx.github.io/Kevin/" target="_blank" rel="noopener noreferrer" class="proj-link" title="View Live Site">
-                View project <span class="link-arrow">↗</span>
-              </a>
-              <a href="https://github.com/MaheendraHX/Kevin" target="_blank" rel="noopener noreferrer" class="proj-link secondary" title="View on GitHub">
-                GitHub <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02-.82-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.54-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.28.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- JOURNEY -->
-    <section id="experience" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">03 — Journey</div>
-        <h2 class="section-title">Where I've<br><em>been building.</em></h2>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-year">2025 — Present</span>
-                <span class="timeline-badge">Active</span>
-              </div>
-              <h3>Student Web Developer</h3>
-              <p>Building real projects from scratch — car showcases, AI games, emergency apps. Each one pushes my frontend and UI skills further. Focused on animation, polished design, and experiences people actually enjoy using.</p>
-              <div class="timeline-tags">
-                <span>HTML/CSS</span><span>JavaScript</span><span>UI Design</span><span>Animation</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-year">2025 — 2029</span>
-                <span class="timeline-badge">Studying</span>
-              </div>
-              <h3>B.Tech — TocH Institute of Science & Technology</h3>
-              <p>Pursuing a Bachelor of Technology degree in Ernakulam, Kerala. Combining my academic foundation with self-driven projects to build skills that matter in the real world.</p>
-              <div class="timeline-tags">
-                <span>Ernakulam, Kerala</span><span>Engineering</span><span>Expected 2029</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS & TECH STACK -->
-    <section id="skills" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">04 — Skills &amp; Toolkit</div>
-        <h2 class="section-title">My toolkit,<br><em>so far.</em></h2>
-        <div class="skills-layout">
-
-          <div class="skills-left">
-            <div class="skill-group">
-              <p class="skill-group-label">Frontend</p>
-              <div class="skill-cards">
-                <div class="skill-card">
-                  <div class="skill-icon"><span>&lt;/&gt;</span></div>
-                  <span>HTML</span>
-                  <span class="skill-level">Strong</span>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-icon"><span>{ }</span></div>
-                  <span>CSS</span>
-                  <span class="skill-level">Strong</span>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-icon"><span>JS</span></div>
-                  <span>JavaScript</span>
-                  <span class="skill-level">Comfortable</span>
-                </div>
-              </div>
-            </div>
-            <div class="skill-group" style="margin-top:28px">
-              <p class="skill-group-label">Design &amp; Interaction</p>
-              <div class="skill-cards">
-                <div class="skill-card">
-                  <div class="skill-icon"><span>◉</span></div>
-                  <span>Web Design</span>
-                  <span class="skill-level">Strong</span>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-icon"><span>◌</span></div>
-                  <span>UI/UX</span>
-                  <span class="skill-level">Comfortable</span>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-icon"><span>◌</span></div>
-                  <span>Animations</span>
-                  <span class="skill-level">Comfortable</span>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-icon"><span>▦</span></div>
-                  <span>Responsive Design</span>
-                  <span class="skill-level">Strong</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skills-right">
-            <p class="skill-group-label">Tools &amp; Technologies</p>
-            <div class="tech-grid">
-              <div class="tech-item" data-color="#3776ab">
-                <span class="tech-icon">Py</span>
-                <span class="tech-name">Python</span>
-              </div>
-              <div class="tech-item" data-color="#f05032">
-                <span class="tech-icon">⑂</span>
-                <span class="tech-name">Git</span>
-              </div>
-              <div class="tech-item" data-color="#a259ff">
-                <span class="tech-icon">Fg</span>
-                <span class="tech-name">Figma</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section id="languages" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">05 — Languages</div>
-        <h2 class="section-title">I speak,<br><em>I connect.</em></h2>
-        <div class="lang-strip">
-          <div class="lang-block">
-            <div class="lang-script">Aa</div>
-            <div class="lang-info">
-              <div class="lang-name">English</div>
-              <div class="lang-level">Fluent & Conversational</div>
-              <div class="lang-dots">
-                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span>
-              </div>
-            </div>
-          </div>
-          <div class="lang-divider"></div>
-          <div class="lang-block featured-lang">
-            <div class="lang-script">മ</div>
-            <div class="lang-info">
-              <div class="lang-name">Malayalam</div>
-              <div class="lang-level">Native Language</div>
-              <div class="lang-dots">
-                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
-              </div>
-            </div>
-          </div>
-          <div class="lang-divider"></div>
-          <div class="lang-block">
-            <div class="lang-script">हि</div>
-            <div class="lang-info">
-              <div class="lang-name">Hindi</div>
-              <div class="lang-level">Conversational</div>
-              <div class="lang-dots">
-                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATES -->
-    <section id="certificates" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">06 — Certificates</div>
-        <h2 class="section-title">Proof that I<br><em>keep learning.</em></h2>
-        <p class="section-intro">Supporting evidence from workshops, courses, and learning beyond the projects.</p>
-        <div class="certificate-grid compact-certificates">
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-advay26.jpg" target="_blank" rel="noopener noreferrer" aria-label="View Software Engineering 101 certificate full size">
-              <img src="cert-advay26.jpg" alt="Software Engineering 101 certificate" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>Software Engineering 101</h3>
-              <p class="certificate-issuer">ADVAY Workshops · IEEE Computer Society TocH &amp; Core.ai</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Feb 13, 2026</span>
-                <a class="certificate-link" href="cert-advay26.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-lifosys-aiilab.jpg" target="_blank" rel="noopener noreferrer" aria-label="View AI Industry Internship certificate full size">
-              <img src="cert-lifosys-aiilab.jpg" alt="AI Industry Internship certificate" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>AI Industry Internship</h3>
-              <p class="certificate-issuer">Lifosys Digital Systems &amp; Aiilab</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Jun 3 – Jul 3, 2026</span>
-                <a class="certificate-link" href="cert-lifosys-aiilab.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-tathva25.jpg" target="_blank" rel="noopener noreferrer" aria-label="View Wireless Robotic Car workshop certificate full size">
-              <img src="cert-tathva25.jpg" alt="Wireless Robotic Car workshop certificate" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>Wireless Robotic Car</h3>
-              <p class="certificate-issuer">TATHVA ’25 · NIT Calicut</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Oct 24–26, 2025</span>
-                <a class="certificate-link" href="cert-tathva25.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-techfoss26.jpg" target="_blank" rel="noopener noreferrer" aria-label="View HACKLAB.exe certificate full size">
-              <img src="cert-techfoss26.jpg" alt="HACKLAB.exe Cyber Security Workshop certificate" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>HACKLAB.exe: Cyber Security</h3>
-              <p class="certificate-issuer">TECHFOSS 2026 · Toc H Dept. of CSE / IEEE-CS</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Feb 27, 2026</span>
-                <a class="certificate-link" href="cert-techfoss26.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-cyberverse.jpg" target="_blank" rel="noopener noreferrer" aria-label="View Cyber Verse Blue Teaming certificate full size">
-              <img src="cert-cyberverse.jpg" alt="Cyber Verse Blue Teaming certificate" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>Cyber Verse: Blue Teaming</h3>
-              <p class="certificate-issuer">IEEE Computer Society Kerala Chapter</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Jun 26, 2026</span>
-                <a class="certificate-link" href="cert-cyberverse.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-digital-edge-101.jpg" target="_blank" rel="noopener noreferrer" aria-label="View Digital Edge 101 certificate full size">
-              <img src="cert-digital-edge-101.jpg" alt="Digital Edge 101 certificate of completion" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>Digital Edge 101</h3>
-              <p class="certificate-issuer">IT-ITeS Sector Skills Council, Nasscom</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Mar 14, 2026</span>
-                <a class="certificate-link" href="cert-digital-edge-101.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-futureskills-digital-edge-101-gold.jpg" target="_blank" rel="noopener noreferrer" aria-label="View Digital Edge 101 Gold certificate full size">
-              <img src="cert-futureskills-digital-edge-101-gold.jpg" alt="Digital Edge 101 Gold certificate from FutureSkills Prime and NASSCOM" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>Digital Edge 101 — Gold</h3>
-              <p class="certificate-issuer">FutureSkills Prime · NASSCOM IT-ITeS SSC</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Jul 2, 2026</span>
-                <a class="certificate-link" href="cert-futureskills-digital-edge-101-gold.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-claude-academy-ai-capabilities-limitations.png" target="_blank" rel="noopener noreferrer" aria-label="View AI Capabilities and Limitations certificate full size">
-              <img src="cert-claude-academy-ai-capabilities-limitations.png" alt="Claude Academy AI Capabilities and Limitations course completion badge" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>AI Capabilities and Limitations</h3>
-              <p class="certificate-issuer">Claude Academy</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Aug 26, 2026</span>
-                <a class="certificate-link" href="cert-claude-academy-ai-capabilities-limitations.png" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="certificate-card">
-            <a class="certificate-media" href="cert-anthropic-ai-fluency.jpg" target="_blank" rel="noopener noreferrer" aria-label="View AI Fluency Framework and Foundations certificate full size">
-              <img src="cert-anthropic-ai-fluency.jpg" alt="AI Fluency: Framework and Foundations certificate of completion" loading="lazy">
-            </a>
-            <div class="certificate-content">
-              <h3>AI Fluency: Framework &amp; Foundations</h3>
-              <p class="certificate-issuer">Anthropic</p>
-              <div class="certificate-footer">
-                <span class="certificate-date">Date not specified</span>
-                <a class="certificate-link" href="cert-anthropic-ai-fluency.jpg" target="_blank" rel="noopener noreferrer">View full <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section-screen">
-      <div class="section-inner">
-        <div class="section-label">07 — Contact</div>
-        <h2 class="section-title contact-headline">Let's build<br><em>something great.</em></h2>
-        <p class="contact-sub">Open to internships, freelance work, and thoughtful collaborations. If you have a good problem to explore, let's talk.</p>
-        <div class="contact-grid">
-          <a href="mailto:maheendramenon@gmail.com" class="contact-card" aria-label="Email Maheendra Menon">
-            <div class="contact-icon email-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">maheendramenon@gmail.com</span>
-            </div>
-            <div class="contact-arrow">→</div>
-          </a>
-          <a href="tel:+919746945370" class="contact-card" aria-label="Call Maheendra Menon">
-            <div class="contact-icon phone-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">Phone</span>
-              <span class="contact-value">+91 97469 45370</span>
-            </div>
-            <div class="contact-arrow">→</div>
-          </a>
-          <a href="https://www.instagram.com/x_tr_em_er/" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit Maheendra Menon on Instagram">
-            <div class="contact-icon instagram-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">Instagram</span>
-              <span class="contact-value">@x_tr_em_er</span>
-            </div>
-            <div class="contact-arrow">→</div>
-          </a>
-          <a href="https://github.com/MaheendraHX" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit Maheendra Menon on GitHub">
-            <div class="contact-icon github-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">MaheendraHX</span>
-            </div>
-            <div class="contact-arrow">→</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>© 2026 Maheendra Menon — UI/UX, frontend, and interactive web.</p>
-  </div>
-</footer>
-
-<script>
-(() => {
-  'use strict';
-
-  /* ============================
-     STATE
-     ============================ */
-  let isShowingContent = false;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
-
-  /* ============================
-     1. HERO TEXT SPLIT ANIMATION
-     ============================ */
-  document.querySelectorAll('[data-split]').forEach(el => {
-    const text = el.textContent;
-    el.textContent = '';
-    el.setAttribute('aria-label', text);
-    [...text].forEach((char, i) => {
-      const span = document.createElement('span');
-      span.className = 'char';
-      span.textContent = char === ' ' ? '\u00A0' : char;
-      span.style.setProperty('--i', i);
-      span.setAttribute('aria-hidden', 'true');
-      el.appendChild(span);
-    });
-  });
-
-  /* ============================
-     2. CHOREOGRAPHED ENTRANCE
-     ============================ */
-  window.addEventListener('DOMContentLoaded', () => {
-    // Small delay for fonts to settle
-    setTimeout(() => document.body.classList.add('loaded'), 150);
-
-    // Deep link support
-    if (location.hash && location.hash !== '#hero') {
-      setTimeout(() => {
-        showPortfolio();
-        jumpToSection(location.hash);
-      }, 600);
-    }
-  });
-
-  /* ============================
-     3. BACKGROUND SPOTLIGHT
-     ============================ */
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-  const bgCanvas = document.getElementById('bg-canvas');
-  let spotlightFrame;
-
-  if (bgCanvas && finePointer.matches && !prefersReducedMotion) {
-    window.addEventListener('pointermove', e => {
-      if (spotlightFrame) return;
-      spotlightFrame = window.requestAnimationFrame(() => {
-        bgCanvas.style.setProperty('--spotlight-x', `${(e.clientX / window.innerWidth) * 100}%`);
-        bgCanvas.style.setProperty('--spotlight-y', `${(e.clientY / window.innerHeight) * 100}%`);
-        spotlightFrame = undefined;
-      });
-    }, { passive: true });
-  }
-
-  /* ============================
-     4. 3D TILT ON HERO IMAGE
-     ============================ */
-  const imgBox = document.getElementById('heroImageBox');
-  const imgFrame = document.getElementById('heroImageFrame');
-  if (imgBox && imgFrame) {
-    imgBox.addEventListener('mousemove', e => {
-      if (prefersReducedMotion) return;
-      const rect = imgBox.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      imgFrame.style.transform =
-        `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.03)`;
-    });
-    imgBox.addEventListener('mouseleave', () => {
-      if (prefersReducedMotion) return;
-      imgFrame.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)';
-    });
-  }
-
-  /* ============================
-     5. SHOW / HIDE PORTFOLIO
-     ============================ */
-  const showPortfolio = () => {
-    isShowingContent = true;
-    document.body.classList.add('show-content');
-  };
-  const hidePortfolio = () => {
-    isShowingContent = false;
-    document.body.classList.remove('show-content');
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  };
-  const jumpToSection = id => {
-    const el = document.querySelector(id);
-    if (!el) return;
-    setTimeout(() => el.scrollIntoView({ behavior: 'instant', block: 'start' }), 60);
-  };
-  const smoothToSection = id => {
-    const el = document.querySelector(id);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({ top: Math.max(top, 0), behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-  };
-
-  /* ============================
-     6. BUTTON BINDINGS
-     ============================ */
-  document.getElementById('revealBtn')?.addEventListener('click', e => {
-    e.preventDefault(); showPortfolio(); jumpToSection('#about');
-  });
-  document.getElementById('contactBtn')?.addEventListener('click', e => {
-    e.preventDefault(); showPortfolio(); jumpToSection('#contact');
-  });
-  document.getElementById('heroName')?.addEventListener('click', () => {
-    showPortfolio(); jumpToSection('#about');
-  });
-  document.getElementById('brandReset')?.addEventListener('click', () => hidePortfolio());
-
-  // Nav links
-  document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      const href = link.getAttribute('href');
-      if (!href || href === '#' || href === '#hero') return;
-      e.preventDefault();
-      // Close mobile nav if open
-      document.getElementById('mainNav')?.classList.remove('open');
-      document.getElementById('navToggle')?.classList.remove('open');
-      document.getElementById('navToggle')?.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('nav-open');
-      if (isShowingContent) {
-        smoothToSection(href);
-      } else {
-        showPortfolio();
-        jumpToSection(href);
-      }
-    });
-  });
-
-  // Mobile nav toggle
-  document.getElementById('navToggle')?.addEventListener('click', () => {
-    const nav = document.getElementById('mainNav');
-    const toggle = document.getElementById('navToggle');
-    const isOpen = nav?.classList.toggle('open') ?? false;
-    toggle?.classList.toggle('open', isOpen);
-    toggle?.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('nav-open', isOpen);
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key !== 'Escape') return;
-    const nav = document.getElementById('mainNav');
-    const toggle = document.getElementById('navToggle');
-    if (!nav?.classList.contains('open')) return;
-    nav.classList.remove('open');
-    toggle?.classList.remove('open');
-    toggle?.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-    toggle?.focus();
-  });
-
-  /* ============================
-     7. MOBILE REVEAL + SCROLL-BACK UX
-     ============================ */
-  const mobileViewport = window.matchMedia('(max-width: 720px)');
-  let touchStartY = 0;
-  window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
-  window.addEventListener('touchmove', e => {
-    const touchDelta = e.touches[0].clientY - touchStartY;
-    if (!isShowingContent && mobileViewport.matches && touchDelta < -20) {
-      showPortfolio();
-      jumpToSection('#about');
-      return;
-    }
-    if (isShowingContent && window.scrollY === 0 && touchDelta > 100) hidePortfolio();
-  }, { passive: true });
-  window.addEventListener('wheel', e => {
-    if (!isShowingContent && mobileViewport.matches && e.deltaY > 10) {
-      showPortfolio();
-      jumpToSection('#about');
-      return;
-    }
-    if (isShowingContent && window.scrollY === 0 && e.deltaY < -50) hidePortfolio();
-  }, { passive: true });
-
-  /* ============================
-     8. SCROLL PROGRESS BAR
-     ============================ */
-  const progressBar = document.getElementById('scrollProgress');
-  window.addEventListener('scroll', () => {
-    if (!isShowingContent) return;
-    const scrolled = window.scrollY;
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = max > 0 ? (scrolled / max) * 100 : 0;
-    if (progressBar) progressBar.style.width = pct + '%';
-  }, { passive: true });
-
-  /* ============================
-     9. SCROLLSPY ACTIVE NAV
-     ============================ */
-  const navLinks = document.querySelectorAll('.nav a');
-  const sections = document.querySelectorAll('.section-screen');
-  const spy = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navLinks.forEach(l => {
-          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, { threshold: 0.2, rootMargin: '-80px 0px -30% 0px' });
-  sections.forEach(s => spy.observe(s));
-
-  /* ============================
-     10. SECTION REVEAL OBSERVER
-     ============================ */
-  const reveal = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle('in-view', entry.isIntersecting);
-    });
-  }, { threshold: 0.12 });
-  sections.forEach(s => reveal.observe(s));
-
-  /* ============================
-     11. ANIMATED COUNTERS
-     ============================ */
-  const countersAnimated = new Set();
-  function animateCounters(container) {
-    container.querySelectorAll('[data-count]').forEach(el => {
-      if (countersAnimated.has(el)) return;
-      countersAnimated.add(el);
-      const target = parseInt(el.dataset.count, 10);
-      const suffix = el.dataset.suffix || '';
-      const duration = target > 100 ? 1800 : 1200;
-      const startTime = performance.now();
-      function tick(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease out quad
-        const eased = 1 - (1 - progress) * (1 - progress);
-        const current = Math.round(eased * target);
-        el.textContent = current + suffix;
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    });
-  }
-
-  // Trigger counters when hero loads
-  setTimeout(() => {
-    animateCounters(document.querySelector('.hero-meta'));
-  }, 2200);
-
-  // Trigger counters for about section on scroll
-  const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) animateCounters(entry.target);
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.about-stats').forEach(s => counterObserver.observe(s));
-
-  /* ============================
-     12. SKILL LABELS
-     ============================ */
-
-  /* ============================
-     13. CURSOR SPOTLIGHT ON CARDS
-     ============================ */
-  document.querySelectorAll('.project-card, .stat-item, .contact-card, .tech-item, .timeline-content, .certificate-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      card.style.setProperty('--my', `${e.clientY - r.top}px`);
-    });
-  });
-
-  /* ============================
-     14. MAGNETIC BUTTONS
-     ============================ */
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      if (prefersReducedMotion) return;
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0, 0)';
-    });
-  });
-
-  /* ============================
-     15. TECH ITEM HOVER COLORS
-     ============================ */
-  document.querySelectorAll('.tech-item[data-color]').forEach(item => {
-    const color = item.dataset.color;
-    item.addEventListener('mouseenter', () => {
-      item.style.setProperty('--tech-accent', color);
-    });
-    item.addEventListener('mouseleave', () => {
-      item.style.removeProperty('--tech-accent');
-    });
-  });
-
-})();
-</script>
-
+  </main>
 </body>
 </html>
