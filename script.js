@@ -141,5 +141,6 @@
         image.style.translate = '0 0';
       });
     });
+  
   }
 })();
