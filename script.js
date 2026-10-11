@@ -68,6 +68,19 @@
 
     introRevealed = true;
     body.classList.add('name-revealed');
+
+    // Unlock normal page scrolling when the intro blackout has finished fading.
+    const blackout = document.getElementById('introBlackout');
+    if (reducedMotion || !blackout) {
+      enterSite(null, false);
+    } else {
+      const finishTransition = (event) => {
+        if (event.target !== blackout || event.propertyName !== 'opacity') return;
+        blackout.removeEventListener('transitionend', finishTransition);
+        enterSite(null, false);
+      };
+      blackout.addEventListener('transitionend', finishTransition);
+    }
   };
 
   const beginIntro = () => {
@@ -78,8 +91,6 @@
 
     introTimer = window.setTimeout(revealIntro, 1850);
   };
-
-  beginIntro();
 
   // Close the responsive navigation menu.
   const closeMenu = () => {
@@ -95,7 +106,7 @@
     if (!entered) {
       entered = true;
 
-      body.classList.remove('intro-open', 'name-revealed');
+      body.classList.remove('intro-open');
       body.classList.add('entered');
 
       if (archive) {
@@ -124,13 +135,13 @@
 
     if (!destination) return;
 
-    window.setTimeout(() => {
-      destination.scrollIntoView({
-        behavior: reducedMotion ? 'auto' : 'smooth',
-        block: 'start'
-      });
-    }, 40);
+    destination.scrollIntoView({
+      behavior: reducedMotion ? 'auto' : 'smooth',
+      block: 'start'
+    });
   };
+
+  beginIntro();
 
   // Main hero CTA.
   const enterLink = document.getElementById('enterWork');
@@ -138,7 +149,7 @@
   if (enterLink) {
     enterLink.addEventListener('click', (event) => {
       event.preventDefault();
-      enterSite('#about', true);
+      enterSite(enterLink.getAttribute('href'), true);
     });
   }
 
@@ -157,18 +168,7 @@
         if (body.classList.contains('intro-open')) {
           event.preventDefault();
 
-          if (
-            href === '#home' &&
-            link.classList.contains('wordmark')
-          ) {
-            closeMenu();
-            return;
-          }
-
-          enterSite(
-            href === '#home' ? '#home' : href,
-            href !== '#home'
-          );
+          enterSite(href, href !== '#home');
 
           return;
         }
@@ -205,10 +205,10 @@
 
     if (
       body.classList.contains('intro-open') &&
-      event.key === 'ArrowDown'
+      ['ArrowDown', 'PageDown', ' '].includes(event.key)
     ) {
-      event.preventDefault();
-      enterSite('#about', true);
+      // Unlock the page and preserve the browser's normal key scrolling.
+      enterSite(null, false);
     }
   });
 
@@ -241,7 +241,7 @@
       const currentY = event.touches[0].clientY;
 
       if (touchStartY - currentY > 12) {
-        enterSite('#about', true);
+        enterSite(null, false);
       }
     },
     { passive: true }
@@ -254,7 +254,7 @@
         body.classList.contains('intro-open') &&
         event.deltaY > 8
       ) {
-        enterSite('#about', true);
+        enterSite(null, false);
       }
     },
     { passive: true }
@@ -403,3 +403,4 @@
       });
   }
 })();
+
