@@ -39,3 +39,104 @@ body:not(.js-enabled) [data-reveal]{opacity:1;transform:none}
 @media(max-width:720px){body.js-enabled.intro-open{height:100svh}}
 @media(prefers-reduced-motion:reduce){body.js-enabled.intro-open{height:auto;overflow:auto}}
 body.js-enabled.intro-open .archive{display:none}
+
+/* ================================================================
+   MAHEENDRA MENON — MONOCHROME EDITORIAL REDESIGN
+   Targeted overrides: existing certificate rules are preserved.
+   ================================================================ */
+:root,html{--paper:#f4f4f1;--paper-2:#e5e5e1;--ink:#080808;--soft-ink:#242424;--muted:#777772;--rule:rgba(8,8,8,.18);--accent:#080808;--accent-dark:#444440;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Consolas,monospace;--sans:'Space Grotesk',Arial,sans-serif;color-scheme:light}
+html{background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans)}
+::selection{background:#080808;color:#f4f4f1}
+:focus-visible{outline-color:#080808}
+.page-grain{opacity:.055}
+.scroll-meter span{background:#080808}
+.site-header{border-color:var(--rule)}
+body.entered .site-header{background:rgba(244,244,241,.94)}
+.wordmark-mark span,.hero-period,.project-period,.text-link span,.arrow-down,.quiet-link span,.certificate-open{color:var(--ink)}
+.wordmark-name small,.intro-topline,.intro-bottom,.aside-index,.aside-foot,.hero-side-note,.section-number,.project-kicker,.project-stack,.visual-index,.visual-caption{color:var(--muted)}
+.nav-link::after,.section-tick,.aside-rule{background:#080808}
+.nav-link.is-current{color:#080808}
+.nav-toggle span{background:#080808}
+.intro{background:var(--paper);border-color:var(--rule)}
+.intro::before{background:#080808}
+.eyebrow{color:#555550}
+.status-dot{background:#080808;box-shadow:0 0 0 4px rgba(8,8,8,.08)}
+.hero-title{font-weight:700;letter-spacing:-.105em}
+.hero-line .char{transform:translateY(.46em) rotateX(-45deg);transition-timing-function:cubic-bezier(.16,1,.3,1)}
+.hero-line-second{margin-left:clamp(28px,9vw,145px)}
+.enter-link{border-color:#080808}
+.enter-link:hover{color:#555550;border-color:#555550}
+.enter-link:hover .arrow-down{color:#555550}
+.quiet-link span{color:#080808}
+.hero-aside{border-color:#080808}
+.archive{background:var(--paper)}
+.section{border-color:var(--rule)}
+.about-heading span{color:#777772}
+.section-heading,.about-heading,.project h3,.contact-main h2{font-family:var(--sans);font-weight:600}
+.project{border-color:var(--rule)}
+.project-kicker span:first-child{color:#080808}
+.project-stack i{color:#777772}
+.text-link{border-color:#080808}
+.text-link:hover{color:#555550}
+.project-visual{background:#e5e5e1}
+.mavis-visual{background:#e5e5e1}
+.kevin-visual{background:#dcdcd7}
+.gesture-visual{background:#e5e5e1}
+.disaster-art{background:#dcdcd7}
+.project-visual img,.disaster-art img{filter:grayscale(1)}
+.project:hover .project-visual{transform:translateY(-5px)}
+.gesture-scribble{color:#777772}
+.kevin-letter{color:#080808}
+.kevin-annotation,.kevin-index,.disaster-caption{color:#555550}
+.project-endnote{color:var(--muted)}
+/* Preserve the certificates' original cream/red presentation and CSS behavior. */
+.certificates-section{--paper:#e8e5dc;--paper-2:#dedbd2;--ink:#191a18;--soft-ink:#343632;--muted:#5e5f58;--rule:rgba(25,26,24,.18);--accent:#c94932;--accent-dark:#9f3124;--mono:'DM Mono',ui-monospace,SFMono-Regular,Consolas,monospace;--sans:'Manrope',Arial,sans-serif;background:#e8e5dc;color:#191a18}
+.certificates-section .certificate-preview img{background:#dedbd2}
+.contact-section{background:#080808;color:#f4f4f1}
+.contact-top,.contact-bottom{border-color:rgba(244,244,241,.2)}
+.contact-top,.site-footer{color:#aaa9a2}
+.contact-main .eyebrow{color:#aaa9a2}
+.contact-main h2 em{color:#9a9a94}
+.contact-copy{color:#c8c8c2}
+.contact-email{border-color:#f4f4f1}
+.contact-email span{color:#f4f4f1}
+.contact-bottom>a:first-child:hover,.back-top:hover,.social-links a:hover{color:#f4f4f1}
+.site-footer{background:#080808}
+
+/* Name-first opening: only the name is visible until the wordmark transition. */
+.intro-blackout{position:fixed;inset:0;z-index:200;background:#080808;color:#f4f4f1;display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:1;visibility:visible;transition:opacity .8s cubic-bezier(.2,.8,.2,1),visibility .8s;}
+.intro-name{display:block;padding:0 5vw;white-space:nowrap;font-family:var(--sans);font-size:clamp(2.7rem,10.8vw,10.8rem);font-weight:700;line-height:.9;letter-spacing:-.105em;opacity:0;transform:translateY(24px);animation:introNameIn 1.15s cubic-bezier(.16,1,.3,1) .18s forwards;}
+.intro-index{position:absolute;left:var(--gutter);bottom:28px;color:#8d8d87;font-size:.58rem;letter-spacing:.1em;opacity:0;animation:introMetaIn .6s ease 1s forwards}
+@keyframes introNameIn{to{opacity:1;transform:translateY(0)}}
+@keyframes introMetaIn{to{opacity:1}}
+body.intro-open .site-header{opacity:0;visibility:hidden}
+body.intro-open .intro{background:transparent;border-color:transparent;min-height:100svh;}
+body.intro-open .intro-topline,body.intro-open .intro-bottom,body.intro-open .hero-copy>.eyebrow,body.intro-open .hero-bottomline,body.intro-open .hero-aside,body.intro-open .hero-side-note{opacity:0;visibility:hidden}
+body.intro-open .hero-layout{display:block;position:absolute;inset:0;margin:0;padding:0;pointer-events:none}
+body.intro-open .hero-copy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+body.intro-open .hero-title{font-size:clamp(2.7rem,10.8vw,10.8rem);line-height:.9;letter-spacing:-.105em;text-align:center;transform:translateY(0);}
+body.intro-open .hero-line{display:inline;white-space:normal}
+body.intro-open .hero-line-second{margin:0}
+body.intro-open .hero-period{display:none}
+body.intro-open .hero-line .char{opacity:0!important}
+body.intro-open.name-revealed .intro-blackout{opacity:0;visibility:hidden;pointer-events:none}
+body.intro-open.name-revealed .hero-line .char{opacity:1!important;transform:none!important}
+body.intro-open.name-revealed .hero-title{animation:heroNameSettle .95s cubic-bezier(.16,1,.3,1) both}
+@keyframes heroNameSettle{from{transform:scale(.94);letter-spacing:-.12em}to{transform:scale(1);letter-spacing:-.105em}}
+body.intro-open.name-revealed .hero-copy>.eyebrow,body.intro-open.name-revealed .hero-bottomline,body.intro-open.name-revealed .hero-aside{visibility:visible;opacity:1;transform:none}
+body.intro-open.name-revealed .hero-copy>.eyebrow{transition-delay:.16s}
+body.intro-open.name-revealed .hero-statement{transition-delay:.3s}
+body.intro-open.name-revealed .hero-actions{transition-delay:.42s}
+body.intro-open.name-revealed .hero-aside{transition-delay:.3s}
+body.intro-open.name-revealed .intro-topline,body.intro-open.name-revealed .intro-bottom{visibility:visible;opacity:1;transition:opacity .7s ease .2s}
+body.intro-open.name-revealed .site-header{visibility:visible;opacity:1;transition:opacity .7s ease .2s}
+body.intro-open.name-revealed .hero-layout{position:relative;inset:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,225px);gap:5vw;align-items:end;margin:auto 0;padding:65px 0 76px;pointer-events:auto}
+body.intro-open.name-revealed .hero-copy{position:static;display:block}
+body.intro-open.name-revealed .hero-title{font-size:clamp(4.5rem,11.3vw,13.4rem);line-height:.76;letter-spacing:-.095em;text-align:left;animation:heroNameSettle .95s cubic-bezier(.16,1,.3,1) both}
+body.intro-open.name-revealed .hero-line{display:block;white-space:nowrap}
+body.intro-open.name-revealed .hero-line-second{margin-left:clamp(28px,9vw,145px)}
+body.intro-open.name-revealed .hero-period{display:inline;color:#080808}
+@media(max-width:1100px){body.intro-open.name-revealed .hero-layout{grid-template-columns:1fr;gap:36px}body.intro-open.name-revealed .hero-title{font-size:clamp(4.5rem,11vw,9.7rem)}body.intro-open.name-revealed .hero-aside{justify-self:end}}
+@media(max-width:720px){.intro-name{font-size:clamp(2.35rem,10.8vw,5.5rem)}body.intro-open .hero-title{font-size:clamp(2.35rem,10.8vw,5.5rem)}body.intro-open .hero-line{display:block}body.intro-open .hero-line-second{margin-left:0}body.intro-open.name-revealed .hero-title{font-size:clamp(3.6rem,15.1vw,8rem)}body.intro-open.name-revealed .hero-layout{display:flex;flex-direction:column;align-items:stretch;gap:46px;padding:48px 0 40px}body.intro-open.name-revealed .hero-title{font-size:clamp(3.6rem,15.1vw,8rem)}body.intro-open.name-revealed .hero-line-second{margin-left:8vw}.intro-index{bottom:20px}}
+@media(prefers-reduced-motion:reduce){.intro-name,.intro-index{animation:none;opacity:1;transform:none}body.intro-open .intro-blackout{transition:none}}
