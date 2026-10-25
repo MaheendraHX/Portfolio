@@ -150,26 +150,36 @@ font-size:28px;
 </style>
 
 <script>
-function sendAlert(){
+function sendAlert() {
+    const type = document.getElementById("type").value;
+    const region = document.getElementById("region").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-const type=document.getElementById('type').value
-const region=document.getElementById('region').value
-const message=document.getElementById('message').value
+    if (!region || !message) {
+        alert("Please enter both a target region and an alert message.");
+        return;
+    }
 
-if(message.trim()===""){
-alert("Please enter an alert message")
-return
-}
+    const log = document.getElementById("alertLog");
+    const entry = document.createElement("div");
+    entry.className = "alert";
 
-const log=document.getElementById('alertLog')
+    const heading = document.createElement("strong");
+    heading.textContent = `${type} Alert — Prototype`;
 
-const entry=document.createElement('div')
-entry.className='alert'
-entry.innerHTML="🚨 <b>"+type+" Alert</b> sent to <b>"+region+"</b><br><br>"+message
+    const details = document.createElement("p");
+    details.textContent = `Target region: ${region}`;
 
-log.prepend(entry)
+    const instructions = document.createElement("p");
+    instructions.textContent = message;
 
-alert("Emergency broadcast initiated successfully")
+    entry.append(heading, details, instructions);
+    log.prepend(entry);
+
+    alert(
+        "Prototype demonstration only. " +
+        "No emergency alert was transmitted."
+    );
 }
 </script>
 
