@@ -126,6 +126,21 @@
         </div>
       </div>
     </section>
+    <section class="case-section contribution" aria-labelledby="engineering-title">
+      <div class="section-rail mono"><span>06 / ENGINEERING NOTES</span><span class="rail-line"></span></div>
+      <div class="section-content contribution-layout">
+        <div><p class="eyebrow">THE CHALLENGE</p><h2 id="engineering-title">Keep the user<br>recognised across pages.</h2></div>
+        <div class="contribution-copy">
+          <p>SYNDEO is a multi-page frontend backed by protected REST endpoints. Signing in is only the first step: later requests must continue to carry the user's identity, and the backend must reject missing, invalid, expired, or inactive-user sessions.</p>
+          <ul class="plain-list">
+            <li><strong>Challenge:</strong> Keep authentication consistent as users move between dashboard, discovery, circles, projects, and profile pages.</li>
+            <li><strong>Decision:</strong> Centralise API requests in one frontend wrapper, attach the stored bearer token to requests, and validate JWTs in a stateless Spring Security filter against the active user record.</li>
+            <li><strong>Learning:</strong> Authentication is an end-to-end contract. Frontend token storage, request headers, CORS, API permissions, and backend validation all have to agree.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="case-footer"><a class="wordmark" href="index.html"><span class="mark">M<span>.</span></span><span>MAHEENDRA MENON<br><small>PERSONAL SITE / KERALA</small></span></a><a class="back-link" href="index.html">← BACK TO PORTFOLIO</a><span class="mono footer-note">SYNDEO / CASE STUDY</span></footer>
