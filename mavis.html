@@ -29,7 +29,7 @@
       <p class="tagline">An assistant is more useful when it can work with the context you already have.</p>
       <p class="intro">Mavis is a personal AI assistant that brings conversation, live web research, and file understanding into one workspace. The project has evolved from a local voice-driven experiment into a browser-based assistant designed to keep useful context close.</p>
       <div class="hero-actions">
-        <a class="button-link" href="https://mavis-gamma.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN PROJECT ENTRY <span aria-hidden="true">↗</span></a>
+        <span class="retired-note mono"><span class="status-dot"></span> CURRENT WEB VERSION TEMPORARILY OFFLINE</span>
         <a class="text-link" href="https://github.com/MaheendraHX/Mavis" target="_blank" rel="noopener noreferrer">VIEW SOURCE <span aria-hidden="true">↗</span></a>
         <span class="hero-status mono"><span class="status-dot"></span> WEB REBUILD IN PROGRESS</span>
       </div>
@@ -91,6 +91,20 @@
             <li>Integrated web search, document processing, image input, and model-provider fallback.</li>
             <li>Kept owner-only and machine-level experiments separate from the public web experience.</li></ul>
           <div class="scope-note"><strong>Current scope:</strong> Mavis is being rebuilt. The old local voice/PC-control prototype is not the same as the current web assistant, and PC control is disabled in the hosted backend configuration.</div>
+        </div>
+      </div>
+    </section>
+    <section class="case-section contribution" aria-labelledby="engineering-title">
+      <div class="section-rail mono"><span>05 / ENGINEERING NOTES</span><span class="rail-line"></span></div>
+      <div class="section-content contribution-layout">
+        <div><p class="eyebrow">THE CHALLENGE</p><h2 id="engineering-title">One conversation,<br>many kinds of context.</h2></div>
+        <div class="contribution-copy">
+          <p>Mavis has to handle more than a plain text prompt: a conversation can involve uploaded files, images, a page URL, or a live web search. Each source needs to become useful context without pretending that the assistant has read something it has not.</p>
+          <ul class="plain-list">
+            <li><strong>Challenge:</strong> Bring different input types and external tools into one conversational workflow.</li>
+            <li><strong>Decision:</strong> Keep model calls and tool execution behind the server API, with dedicated URL-reading, web-search, and document-processing paths.</li>
+            <li><strong>Learning:</strong> A useful assistant depends as much on reliable context handling, clear tool boundaries, and honest source attribution as it does on the model response.</li>
+          </ul>
         </div>
       </div>
     </section>
