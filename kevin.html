@@ -53,7 +53,8 @@
       </div>
       <div class="visual-grid"><article class="visual-card"><div class="visual-card-top"><span class="visual-index">01</span><span>ORGANISE</span></div><div><strong>Create a subject</strong><p>Keep materials, study conversations, practice sets, and exam dates grouped by topic.</p></div><div class="visual-tags"><span>SUBJECTS</span><span>WORKSPACES</span></div></article>
         <article class="visual-card"><div class="visual-card-top"><span class="visual-index">02</span><span>ADD SOURCES</span></div><div><strong>Bring in the notes</strong><p>Upload a PDF or add text. Scanned pages can be processed with OCR before the material is split into source chunks.</p></div><div class="visual-tags"><span>PDF</span><span>OCR</span><span>TEXT</span></div></article>
-        <article class="visual-card"><div class="visual-card-top"><span class="visual-index">03</span><span>UNDERSTAND</span></div><div><strong>Ask with citations</strong><p>Kevin selects relevant excerpts and returns answers with citations that can be checked against the source.</p></div><div class="visual-tags"><span>GROUNDED Q&A</span><span>CITATIONS</span></div></article></div>
+        <article class="visual-card"><div class="visual-card-top"><span class="visual-index">03</span><span>UNDERSTAND</span></div><div><strong>Ask with citations</strong><p>Kevin selects relevant excerpts and returns answers with citations that can be checked against the source.</p></div><div class="visual-tags"><span>GROUNDED Q&A</span><span>CITATIONS</span></div></article>
+        <article class="visual-card"><div class="visual-card-top"><span class="visual-index">04</span><span>PRACTISE & REVIEW</span></div><div><strong>Test what you know</strong><p>Turn the material into flashcards and quizzes, then revisit cards through scheduled review and use feedback to spot gaps.</p></div><div class="visual-tags"><span>FLASHCARDS</span><span>QUIZZES</span><span>REVIEW</span></div></article></div>
     </section>
     <section class="case-section feature-section" aria-labelledby="features-title">
       <div class="section-rail mono"><span>02 / CORE FEATURES</span><span class="rail-line"></span></div>
@@ -91,6 +92,20 @@
             <li>Refined source-grounded answers, citation handling, and the revision loop.</li>
             <li>Used a relational data model to keep study content and progress organised per user.</li></ul>
           <div class="scope-note"><strong>Current scope:</strong> The repository includes subject workspaces, source ingestion, grounded answers, summaries, flashcards with scheduled review, quizzes, exports, exam dates, and study-progress summaries.</div>
+        </div>
+      </div>
+    </section>
+    <section class="case-section contribution" aria-labelledby="engineering-title">
+      <div class="section-rail mono"><span>05 / ENGINEERING NOTES</span><span class="rail-line"></span></div>
+      <div class="section-content contribution-layout">
+        <div><p class="eyebrow">THE CHALLENGE</p><h2 id="engineering-title">Make the source<br>part of the answer.</h2></div>
+        <div class="contribution-copy">
+          <p>Study material is not always clean selectable text. Some PDFs are scanned, and even after extraction, an answer is only useful if its supporting material can be checked.</p>
+          <ul class="plain-list">
+            <li><strong>Challenge:</strong> Turn text-based and scanned PDFs into bounded, retrievable source chunks while preserving page references.</li>
+            <li><strong>Decision:</strong> Extract text first, OCR pages that lack usable text, split content into overlapping chunks, and resolve generated citation IDs only against the excerpts supplied to the model.</li>
+            <li><strong>Learning:</strong> Source-grounded AI needs a retrieval and citation pipeline around the model. When relevant material is missing, saying so is better than filling the gap with an unsupported answer.</li>
+          </ul>
         </div>
       </div>
     </section>
