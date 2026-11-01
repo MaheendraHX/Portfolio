@@ -94,6 +94,20 @@
         </div>
       </div>
     </section>
+    <section class="case-section contribution" aria-labelledby="engineering-title">
+      <div class="section-rail mono"><span>05 / ENGINEERING NOTES</span><span class="rail-line"></span></div>
+      <div class="section-content contribution-layout">
+        <div><p class="eyebrow">THE CHALLENGE</p><h2 id="engineering-title">A gesture has to<br>become a number.</h2></div>
+        <div class="contribution-copy">
+          <p>The game does not receive a number from the player. It receives camera frames and has to interpret the hand landmarks consistently enough to compare a gesture with the answer.</p>
+          <ul class="plain-list">
+            <li><strong>Challenge:</strong> Count extended fingers across up to two detected hands, including the thumb whose direction differs between left and right hands.</li>
+            <li><strong>Decision:</strong> Use MediaPipe Hands landmarks, compare fingertip and joint positions, and account for the detected hand label when evaluating the thumb.</li>
+            <li><strong>Learning:</strong> Real-time camera interaction needs a clear time limit and a predictable capture point; otherwise a changing hand pose can make the answer feel ambiguous.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section class="case-close" aria-label="Project links">
       <div><p class="eyebrow">GESTURE MATH / PLAY WITH YOUR HANDS</p><h2>A quick experiment in making a familiar task feel different.</h2></div>
       <a class="text-link" href="https://gesture-math.vercel.app/" target="_blank" rel="noopener noreferrer">TRY THE GAME <span aria-hidden="true">↗</span></a>
