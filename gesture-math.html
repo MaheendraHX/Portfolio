@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Gesture Math case study: a browser-based arithmetic game that uses MediaPipe hand tracking as its input.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gesture Math — Case Study | Maheendra Menon">
+  <meta property="og:description" content="A webcam, a hand, and a four-second math challenge.">
+  <title>Gesture Math — Case Study | Maheendra Menon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body data-project="gesture-math">
+  <a class="skip-link" href="#main">Skip to case study</a>
+  <header class="case-header">
+    <a class="wordmark" href="index.html" aria-label="Back to Maheendra Menon's portfolio"><span class="mark">M<span>.</span></span><span>MAHEENDRA MENON<br><small>PERSONAL SITE / KERALA</small></span></a>
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> BACK TO PORTFOLIO</a>
+  </header>
+  <main id="main">
+    <section class="case-hero" aria-labelledby="project-title">
+      <div class="hero-meta mono"><span>PROJECT 03 / CASE STUDY</span><span>INTERACTIVE WEB EXPERIMENT</span></div>
+      <p class="eyebrow"><span class="status-dot"></span> COMPUTER VISION · EDUCATIONAL GAME</p>
+      <h1 id="project-title">Gesture Math<span class="period">.</span></h1>
+      <p class="tagline">What if your fingers were the controller?</p>
+      <p class="intro">Gesture Math is a browser-based arithmetic game that turns hand gestures into answers. A webcam tracks the player's fingers, a short equation appears, and the player has four seconds to show the correct number.</p>
+      <div class="hero-actions">
+        <a class="button-link" href="https://gesture-math.vercel.app/" target="_blank" rel="noopener noreferrer">PLAY THE GAME <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="https://github.com/MaheendraHX/Math-game" target="_blank" rel="noopener noreferrer">VIEW SOURCE <span aria-hidden="true">↗</span></a>
+        <span class="hero-status mono"><span class="status-dot"></span> VERCEL WEB DEPLOYMENT</span>
+      </div>
+      <div class="hero-index mono"><span>HTML · CSS · JAVASCRIPT</span><span>MEDIAPIPE HANDS · WEBCAM</span></div>
+    </section>
+    <section class="case-section overview" aria-labelledby="overview-title">
+      <div class="section-rail mono"><span>01 / THE CONTEXT</span><span class="rail-line"></span></div>
+      <div class="section-content">
+        <p class="eyebrow">A DIFFERENT KIND OF INPUT</p>
+        <h2 id="overview-title">Make the answer<br>something you do.</h2>
+        <div class="two-column">
+          <article><p class="label mono">THE CHALLENGE</p><p>Most quick arithmetic games use buttons or a keyboard. Gesture Math experiments with a more physical interaction: answering by raising fingers in front of a camera.</p></article>
+          <article><p class="label mono">THE DESIGN</p><p>Keep the rules simple, make the response immediate, and let the time pressure create a small game loop. The camera becomes the controller; the player's hand becomes the input.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="case-visual-section" aria-labelledby="loop-title">
+      <div class="visual-section-heading">
+        <div><p class="eyebrow">THE GAME LOOP</p><h2 id="loop-title">See the question.<br>Show the answer.</h2></div>
+        <p>This is an interaction model based on the current game logic, not a screenshot of the running application.</p>
+      </div>
+      <div class="visual-grid"><article class="visual-card"><div class="visual-card-top"><span class="visual-index">01</span><span>QUESTION</span></div><div><strong>3 × 2 = ?</strong><p>A random addition, subtraction, or multiplication question appears. Generated answers stay within the supported range of zero to ten.</p></div><div class="visual-tags"><span>RANDOM EQUATION</span></div></article>
+        <article class="visual-card"><div class="visual-card-top"><span class="visual-index">02</span><span>INPUT WINDOW</span></div><div><strong>4.0 seconds</strong><p>MediaPipe Hands tracks the hand landmarks while the game counts extended fingers from up to two hands.</p></div><div class="visual-tags"><span>WEBCAM</span><span>HAND LANDMARKS</span></div></article>
+        <article class="visual-card"><div class="visual-card-top"><span class="visual-index">03</span><span>FEEDBACK</span></div><div><strong>Instant capture</strong><p>A matching finger count locks the answer, updates the streak and solve-time stats, then moves to the next question.</p></div><div class="visual-tags"><span>STREAK</span><span>FASTEST TIME</span></div></article></div>
+    </section>
+    <section class="case-section feature-section" aria-labelledby="features-title">
+      <div class="section-rail mono"><span>02 / CORE FEATURES</span><span class="rail-line"></span></div>
+      <div class="section-content">
+        <p class="eyebrow">THE DETAILS</p>
+        <h2 id="features-title">A small loop with<br>real-time feedback.</h2>
+        <ul class="feature-list"><li><span class="feature-no mono">01</span><span class="feature-name">Random addition, subtraction, and multiplication questions</span><span class="feature-mark" aria-hidden="true">↗</span></li>
+          <li><span class="feature-no mono">02</span><span class="feature-name">Live webcam processing with MediaPipe Hands</span><span class="feature-mark" aria-hidden="true">↗</span></li>
+          <li><span class="feature-no mono">03</span><span class="feature-name">Finger-count recognition using hand landmarks</span><span class="feature-mark" aria-hidden="true">↗</span></li>
+          <li><span class="feature-no mono">04</span><span class="feature-name">Four-second answer timer and automatic question progression</span><span class="feature-mark" aria-hidden="true">↗</span></li>
+          <li><span class="feature-no mono">05</span><span class="feature-name">Current streak, fastest solve, and average solve-time feedback</span><span class="feature-mark" aria-hidden="true">↗</span></li>
+          <li><span class="feature-no mono">06</span><span class="feature-name">Two-second pause between results and the next question</span><span class="feature-mark" aria-hidden="true">↗</span></li></ul>
+        
+      </div>
+    </section>
+    <section class="case-section architecture" aria-labelledby="architecture-title">
+      <div class="section-rail mono"><span>03 / HOW IT FITS</span><span class="rail-line"></span></div>
+      <div class="section-content">
+        <p class="eyebrow">TECHNICAL ARCHITECTURE</p>
+        <h2 id="architecture-title">The browser handles<br>the whole interaction.</h2>
+        <div class="architecture-flow" aria-label="Webcam video is processed by MediaPipe Hands, finger counts are compared to a generated answer, then the game updates the score"><div class="flow-node"><span class="flow-number mono">01</span><strong>Camera input</strong><span>Browser webcam stream · HTML video and canvas</span></div>
+          <span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node"><span class="flow-number mono">02</span><strong>Gesture detection</strong><span>MediaPipe Hands · landmark positions · finger count</span></div>
+          <span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node"><span class="flow-number mono">03</span><strong>Game logic</strong><span>Answer match · timer · streak · solve-time stats</span></div></div>
+        <div class="auth-note"><span class="label mono">STACK</span><p>Vanilla HTML, CSS, and JavaScript with MediaPipe Hands and Camera Utils loaded from a CDN. The current game is client-side and does not depend on an app-specific backend.</p></div>
+      </div>
+    </section>
+    <section class="case-section contribution" aria-labelledby="role-title">
+      <div class="section-rail mono"><span>04 / MY ROLE</span><span class="rail-line"></span></div>
+      <div class="section-content contribution-layout">
+        <div><p class="eyebrow">FRONTEND EXPERIMENT</p><h2 id="role-title">From camera frames<br>to a playable loop.</h2></div>
+        <div class="contribution-copy">
+          <p>I built the browser experience and connected the camera-based gesture input to the game logic.</p>
+          <ul class="plain-list"><li>Created the question generator and arithmetic answer checks.</li>
+            <li>Integrated MediaPipe Hands and processed landmark positions to count extended fingers.</li>
+            <li>Implemented the countdown, instant answer capture, and automatic next-question flow.</li>
+            <li>Added streak tracking and fastest / average solve-time feedback.</li></ul>
+          <div class="scope-note"><strong>Current scope:</strong> The score metrics live in the active page session; the current code does not save a persistent player profile or long-term leaderboard. Camera access is required to play.</div>
+        </div>
+      </div>
+    </section>
+    <section class="case-close" aria-label="Project links">
+      <div><p class="eyebrow">GESTURE MATH / PLAY WITH YOUR HANDS</p><h2>A quick experiment in making a familiar task feel different.</h2></div>
+      <a class="text-link" href="https://gesture-math.vercel.app/" target="_blank" rel="noopener noreferrer">TRY THE GAME <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="case-footer"><a class="wordmark" href="index.html"><span class="mark">M<span>.</span></span><span>MAHEENDRA MENON<br><small>PERSONAL SITE / KERALA</small></span></a><a class="back-link" href="index.html">← BACK TO PORTFOLIO</a><span class="mono footer-note">GESTURE MATH / CASE STUDY</span></footer>
+</body>
+</html>
