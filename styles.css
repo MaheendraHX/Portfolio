@@ -197,3 +197,84 @@ body.intro-open .hero-line{white-space:normal}
   justify-content: center;
   margin-inline: auto;
 }
+
+
+/* Restore readable certificate labels against the original warm paper background. */
+.certificates-section {
+  --muted: #41423d;
+}
+
+.certificates-section .eyebrow {
+  color: #842b20;
+}
+
+.certificates-section .certificate-no,
+.certificates-section .certificate-date,
+.certificates-section .certificate-issuer,
+.certificates-section .certificate-note,
+.certificates-section .section-number {
+  color: #41423d;
+}
+
+.certificates-section .certificate-open {
+  color: #9f3124;
+}
+
+/* Keep the final contact panel and its footer content centered as one composition. */
+.contact-section {
+  text-align: center;
+}
+
+.contact-top {
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.contact-main .eyebrow,
+.contact-main h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.contact-copy {
+  margin: 35px auto 30px;
+  text-align: center;
+}
+
+.contact-email {
+  justify-content: center;
+  margin-inline: auto;
+}
+
+.contact-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.contact-bottom > * {
+  margin-inline: auto;
+}
+
+.social-links {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
