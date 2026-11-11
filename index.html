@@ -15,10 +15,11 @@
   <meta property="og:description" content="A collection of software, interfaces, and experiments by Maheendra Menon.">
   <meta property="og:image" content="https://maheendrahx.github.io/Portfolio/me.jpeg">
   <title>Maheendra Menon — Portfolio</title>
+  <script src="theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style id="theme-token-fallback">:root,html{--paper:#f4f4f1;--paper-2:#e5e5e1;--ink:#080808;--soft-ink:#242424;--muted:#777772;--rule:rgba(8,8,8,.18);--accent:#080808;--accent-dark:#444440;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Consolas,monospace;--sans:'Space Grotesk',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--gutter:clamp(20px,5vw,76px)}</style>
+  <style id="theme-token-fallback">:root,html{--paper:#080808;--paper-2:#151515;--ink:#f4f4f1;--soft-ink:#d8d8d2;--muted:#9a9a94;--rule:rgba(244,244,241,.2);--accent:#f4f4f1;--accent-dark:#aaa9a2;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Consolas,monospace;--sans:'Space Grotesk',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--gutter:clamp(20px,5vw,76px)}html[data-theme="light"]{--paper:#F8F9F5;--paper-2:#E8EEE8;--ink:#173D2B;--soft-ink:#345343;--muted:#5B6E61;--rule:rgba(23,61,43,.18);--accent:#47745A;--accent-dark:#315840;color-scheme:light}</style>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -37,6 +38,10 @@
       <a href="#certificates" class="nav-link">CERTIFICATES</a>
       <a href="#contact" class="nav-link">CONTACT</a>
     </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"></path></svg>
+    </button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false"><span></span><span></span></button>
   </header>
 

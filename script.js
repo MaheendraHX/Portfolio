@@ -11,12 +11,157 @@
   const archive = document.getElementById('archive');
   const nav = document.getElementById('mainNav');
   const navToggle = document.getElementById('navToggle');
+  const themeToggle = document.getElementById('themeToggle');
   const meter = document.getElementById('scrollMeter');
   const navLinks = [...document.querySelectorAll('.nav-link')];
+  const root = document.documentElement;
 
   let entered = false;
   let introRevealed = false;
   let introTimer = 0;
+  let themeTransitionRunning = false;
+
+  const updateTheme = (theme) => {
+    root.dataset.theme = theme;
+
+    if (themeToggle) {
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      const label = `Switch to ${nextTheme} theme`;
+
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
+      themeToggle.title = label;
+    }
+
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+
+    if (themeColor) {
+      themeColor.content = theme === 'light' ? '#F8F9F5' : '#080808';
+    }
+
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+    } catch (error) {
+      console.warn('Unable to save the portfolio theme preference.', error);
+    }
+  };
+
+  const makeInkShape = (x, y, radius, width, height) => {
+    const points = [];
+    const pointCount = 88;
+    const tendrils = [
+      [-2.25, 0.12, 0.13],
+      [-0.74, 0.15, 0.17],
+      [0.58, 0.11, 0.14],
+      [2.4, 0.14, 0.16]
+    ];
+
+    for (let index = 0; index < pointCount; index += 1) {
+      const angle = (index / pointCount) * Math.PI * 2;
+      const branches = tendrils.reduce((total, [direction, spread, length]) => {
+        const difference = Math.atan2(
+          Math.sin(angle - direction),
+          Math.cos(angle - direction)
+        );
+
+        return total + length * Math.exp(-((difference / spread) ** 2));
+      }, 0);
+      const contour =
+        1 +
+        0.105 * Math.sin(angle * 3 + 0.35) +
+        0.075 * Math.sin(angle * 5 - 1.1) +
+        0.045 * Math.sin(angle * 9 + 1.7) +
+        0.018 * Math.sin(angle * 17 - 0.6) +
+        branches;
+      const pointX = x + Math.cos(angle) * radius * contour;
+      const pointY = y + Math.sin(angle) * radius * contour;
+
+      points.push(
+        `${(pointX / width) * 100}% ${(pointY / height) * 100}%`
+      );
+    }
+
+    return `polygon(${points.join(',')})`;
+  };
+
+  const switchTheme = () => {
+    if (!themeToggle || themeTransitionRunning) return;
+
+    const nextTheme =
+      root.dataset.theme === 'light' ? 'dark' : 'light';
+    const applyTheme = () => updateTheme(nextTheme);
+
+    if (
+      reducedMotion ||
+      typeof document.startViewTransition !== 'function'
+    ) {
+      if (!reducedMotion) {
+        root.classList.add('theme-switching');
+        window.setTimeout(() => {
+          root.classList.remove('theme-switching');
+        }, 420);
+      }
+
+      applyTheme();
+      return;
+    }
+
+    const rect = themeToggle.getBoundingClientRect();
+    const width = Math.max(document.documentElement.clientWidth, 1);
+    const height = Math.max(document.documentElement.clientHeight, 1);
+    const originX = rect.left + rect.width / 2;
+    const originY = rect.top + rect.height / 2;
+    const farthestCorner = Math.max(
+      Math.hypot(originX, originY),
+      Math.hypot(width - originX, originY),
+      Math.hypot(originX, height - originY),
+      Math.hypot(width - originX, height - originY)
+    );
+    const startShape = makeInkShape(originX, originY, 5, width, height);
+    const endShape = makeInkShape(
+      originX,
+      originY,
+      (farthestCorner + 40) / 0.72,
+      width,
+      height
+    );
+
+    root.style.setProperty('--theme-wipe-start', startShape);
+    root.style.setProperty('--theme-wipe-end', endShape);
+    themeTransitionRunning = true;
+
+    let transition;
+
+    try {
+      transition = document.startViewTransition(applyTheme);
+    } catch (error) {
+      console.error('Unable to start the theme transition.', error);
+      root.style.removeProperty('--theme-wipe-start');
+      root.style.removeProperty('--theme-wipe-end');
+      themeTransitionRunning = false;
+      applyTheme();
+      return;
+    }
+
+    transition.finished.then(
+      () => {
+        root.style.removeProperty('--theme-wipe-start');
+        root.style.removeProperty('--theme-wipe-end');
+        themeTransitionRunning = false;
+      },
+      (error) => {
+        console.error('The theme transition was interrupted.', error);
+        root.style.removeProperty('--theme-wipe-start');
+        root.style.removeProperty('--theme-wipe-end');
+        themeTransitionRunning = false;
+      }
+    );
+  };
+
+  if (themeToggle) {
+    updateTheme(root.dataset.theme === 'light' ? 'light' : 'dark');
+    themeToggle.addEventListener('click', switchTheme);
+  }
 
   // Split the name into individual characters for the entrance animation.
   document.querySelectorAll('[data-split]').forEach((element) => {
@@ -403,4 +548,3 @@
       });
   }
 })();
-

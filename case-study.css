@@ -38,3 +38,35 @@ body[data-project="syndeo"]{--accent:#FFDE42;--accent-soft:rgba(255,222,66,.12)}
 .case-close .text-link{flex:none}
 @media(max-width:850px){.visual-grid{grid-template-columns:1fr 1fr}.visual-grid .visual-card:last-child{grid-column:span 2}}
 @media(max-width:600px){.visual-section-heading{display:block}.visual-section-heading p{margin-top:16px}.visual-grid{grid-template-columns:1fr}.visual-grid .visual-card:last-child{grid-column:auto}.visual-card{min-height:155px}.case-close{display:block}.case-close .text-link{margin-top:26px}}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --paper: #F8F9F5;
+  --paper-2: #E8EEE8;
+  --ink: #173D2B;
+  --soft: #345343;
+  --muted: #5B6E61;
+  --rule: rgba(23, 61, 43, .18);
+  --accent: #47745A;
+  --accent-soft: rgba(71, 116, 90, .1);
+}
+
+html[data-theme="light"] body {
+  background: #F8F9F5;
+}
+
+html[data-theme="light"] .feature-section,
+html[data-theme="light"] .architecture,
+html[data-theme="light"] .case-visual-section,
+html[data-theme="light"] .shot > a {
+  background: #E8EEE8;
+}
+
+html[data-theme="light"] .visual-card {
+  background: #F8F9F5;
+}
+
+html[data-theme="light"] .expand-mark {
+  background: rgba(23, 61, 43, .88);
+  color: #FFFFFF;
+}
